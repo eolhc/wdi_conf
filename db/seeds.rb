@@ -24,17 +24,26 @@ speaker_name = [
 speaker_desc = [
   "Ari speaks design in volumes, but in simple terms too.",
   "Bruno pretty much spoke Ruby before English. He spoke it before he was born and he speaks it still.",
-  "Catherine volunteers as a open-source gem creator that fixes all our dev problems. Bless her soul.",
+  "Catherine volunteers as a open-source gem creator that fixes our dev problems. Bless her soul.",
   "Charith saves kittens by night and writes stories about Ruby by the day.",
-  "The numbers don't lie and neither does Dean, the data expert. Know your customers, know your numbers.",
+  "The numbers don't lie and neither does Dean, the data expert. Know your customers, know your numbers. Know your Dean.",
   "Duyen is a creative soul, constantly challenging the limits of CSS and coding today.",
   "EJ is a professional web explorer. Also a sasquatch observer in her spare time. Please get in touch if you sight a sasquatch.",
-  "James "
-
-
-
-
-]
+  "James is the founder of the popular dating app for 12-18 year olds, 'PuppyLoveMeUp'.",
+  "Jason codes in JavaScript like Shakespeare wrote sonnets. Professional romancer in JavaScript.",
+  "Ka is a top stackoverflow contributor and YouTube channel 'KaChingKaChan' where he gives advice on creating side projects that leave you with a tidy sum of side cash.",
+  "Leon is the top open-source contributor for pornhub and peruses the site constantly, testing for bugs.",
+  "Melissa has achieved many admirable feats in her life; you probably know her best for her contribution towards the prevalence of party parrots today.",
+  "Micah is the developer behind the only app that properly educates you on trees, 'Treecher'.",
+  "Nick is known for his ebay site that grew into one of the biggest eCommerce sites of today: 'GETGADGET'",
+  "Paul Morello is the creator of CaffeineScript, like CoffeeScript but with more caffeine. Also makes good coffee.",
+  "Paul Williams is behind the start-up that turned successful, 'Beer'",
+  "Pedro won a hackathon when he was 4 years old, with a beer in hand and a keyboard in the other.",
+  "Sean is a professional poker player and is known for his creative take on poker with 'pokerOn'.",
+  "Tim is known for his music app 'TuneIn'.",
+  "Chloe is known for creating everything from code to terrible personal profiles.",
+  "Kerrie may or may not be a prevalent darknets drug lord. Maybe. Maybe not. But maybe."
+];
 talk_title = [
   "What's New in HTML 5.1",
   "Developing a Wizard or Multi-Steps forms in Rails",
@@ -78,7 +87,7 @@ talk_desc = [
   "Pedro pleases us with Phusion Passenger 5 which has an innovative and optimized HTTP engine. Get up to speed with Raptor.",
   "Learn how to learn Angular with Sean Karita. From the basics to the very best tips.",
   "How responsive should responsive design be? What are the limits? Tim talks us through incorporating it with the more advanced plaforms of today.",
-  "Chloe takes us back to basics with a simple network stack.",
+  "Chloe takes us back to basics with a simple network stack in Ruby.",
   "Kerrie takes us on an adventure with ES6. Explore. Learn. Grow. Kerrie knows."
   ];
 talk_genre = [
@@ -104,11 +113,46 @@ talk_genre = [
   "Ruby",
   "JavaScript"
   ];
-talk_time = [];
+talk_time = [9, 10, 11, 1, 2, 3, 4, 9, 10, 11, 1, 2, 3, 4, 9, 10, 11, 1, 2, 3, 4];
 speaker_img = [];
-venue = [];
-seats = [];
+venue = [
+  'The Pudding Room',
+  'The Pudding Room',
+  'The Pudding Room',
+  'The Pudding Room',
+  'The Pudding Room',
+  'The Pudding Room',
+  'The Pudding Room',
+  'The Ballroom',
+  'The Ballroom',
+  'The Ballroom',
+  'The Ballroom',
+  'The Ballroom',
+  'The Ballroom',
+  'The Ballroom',
+  'The Art Space',
+  'The Art Space',
+  'The Art Space',
+  'The Art Space',
+  'The Art Space',
+  'The Art Space',
+  'The Art Space',
+  ];
 social_media = [];
+
+Session.destroy_all
+
+speaker_name.each_with_index do |speaker, index|
+  Session.create({
+    speaker_name: speaker_name,
+    speaker_desc: speaker_desc[index],
+    talk_title: talk_title[index],
+    talk_desc: talk_desc[index],
+    
+    })
+
+
+
 
 
 
