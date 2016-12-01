@@ -1,26 +1,27 @@
 #create session info
 speaker_name = [
-  'Ari Crosby',
-  'Bruno Rampinelli',
-  'Catherine Gracey',
-  'Charith Perera',
-  'Dean Birznieks',
-  'Duyen Ho',
-  'Elizabeth Jones',
-  'James Mah',
-  'Jason Pompon',
-  'Ka Seng Chan',
-  'Leon Falvey',
-  'Melissa Quach',
-  'Micah Boyd',
-  'Nick Mallabo',
-  'Paul Morello',
-  'Paul Williams',
-  'Pedro Araujo',
-  'Sean Karita',
-  'Tim Walter',
-  'Chloe Phua',
-  'Kerrie Batrouney'];
+  "Ari Crosby",
+  "Bruno Rampinelli",
+  "Catherine Gracey",
+  "Charith Perera",
+  "Dean Birznieks",
+  "Duyen Ho",
+  "Elizabeth Jones",
+  "James Mah",
+  "Jason Pompon",
+  "Ka Seng Chan",
+  "Leon Falvey",
+  "Melissa Quach",
+  "Micah Boyd",
+  "Nick Mallabo",
+  "Paul Morello",
+  "Paul Williams",
+  "Pedro Araujo",
+  "Sean Karita",
+  "Tim Walter",
+  "Chloe Phua",
+  "Kerrie Batrouney"];
+
 speaker_desc = [
   "Ari speaks design in volumes, but in simple terms too.",
   "Bruno pretty much spoke Ruby before English. He spoke it before he was born and he speaks it still.",
@@ -141,20 +142,16 @@ venue = [
 social_media = [];
 
 Session.destroy_all
-
 speaker_name.each_with_index do |speaker, index|
   Session.create({
-    speaker_name: speaker_name,
+    speaker_name: speaker_name[index],
     speaker_desc: speaker_desc[index],
     talk_title: talk_title[index],
     talk_desc: talk_desc[index],
-    
-    })
-
-
-
-
-
-
-
-#create 2 dummy attendees
+    talk_genre: talk_genre[index],
+    talk_time: talk_time[index],
+    speaker_img: "https://gravatar.com/avatar/9ff6dec3587cfb45fbcd907d96fb6c6b?s=80&d=https://codepen.io/assets/avatars/user-avatar-80x80-bdcd44a3bfb9a5fd01eb8b86f9e033fa1a9897c3a15b33adfc2649a002dab1b6.png",
+    venue: venue[index],
+    social_media: "@something"
+  });
+end
