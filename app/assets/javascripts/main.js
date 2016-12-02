@@ -22,7 +22,6 @@ $(document).ready(function() {
       }
   })
 
-
 //display slots for the itinerary
 var times = [9, 10, 11, 12, 1, 2, 3, 4]
 var innertext = ["9:00am","10:00am","11:00am","L U N C H","1:00pm","2:00pm","3:00pm","4:00pm"]
@@ -36,7 +35,3 @@ for (var i = 0; i < times.length; i++) {
   $(".itinerary").append(template(timeslot))
   }
 })
-
-if ($('.timeslot').attr("time",12)) {
-  $('.timeslot').css("background-color","red")
-}
