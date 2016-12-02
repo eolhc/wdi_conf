@@ -16,7 +16,7 @@
 
 .speakers, .itinerary {
   display: inline-block;
-  margin-left: 5%;
+  margin: 0 auto;
   width: 40%;
   vertical-align: top;
 }
@@ -25,6 +25,5 @@
   width: 100%;
   border: 2px black solid;
   display: block;
-  margin: 10%;
 
 }
