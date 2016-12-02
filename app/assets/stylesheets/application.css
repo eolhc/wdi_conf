@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+.speakers, .itinerary {
+  display: inline-block;
+  margin-left: 5%;
+  width: 40%;
+  vertical-align: top;
+}
+
+.timeslot, .session-box {
+  width: 100%;
+  border: 2px black solid;
+  display: block;
+  margin: 10%;
+
+}

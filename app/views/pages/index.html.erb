@@ -21,7 +21,7 @@
 </div>
 
 <script id="session-box" type="text/x-handlebars-template">
-  <span time={{talktime}}>
+  <span class="session-box" time={{talktime}}>
     <img src="{{speakerimg}}" alt="">
     <h2>{{speakername}}</h2>
     <h3>{{talktitle}}</h3>
@@ -31,6 +31,6 @@
 
 <script id="timeslot" type="text/x-handlebars-template">
   <span class="timeslot" time={{talktime}}>
-
+    <p>{{text}}</p>
   </span>
 </script>

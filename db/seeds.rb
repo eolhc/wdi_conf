@@ -39,7 +39,7 @@ speaker_desc = [
   "Nick is known for his ebay site that grew into one of the biggest eCommerce sites of today: 'GETGADGET'",
   "Paul Morello is the creator of CaffeineScript, like CoffeeScript but with more caffeine. Also makes good coffee.",
   "Paul Williams is behind the start-up that turned successful, 'Beer'",
-  "Pedro won a hackathon when he was 4 years old, with a beer in hand and a keyboard in the other.",
+  "Pedro won a hackathon when he was 4 years old, with a beer in one hand and a keyboard in the other.",
   "Sean is a professional poker player and is known for his creative take on poker with 'pokerOn'.",
   "Tim is known for his music app 'TuneIn'.",
   "Chloe is known for creating everything from code to terrible personal profiles.",
