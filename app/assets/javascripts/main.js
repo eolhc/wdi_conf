@@ -17,6 +17,7 @@ $(document).ready(function() {
         speakername: sessions[i].speaker_name,
         talktitle: sessions[i].talk_title,
         talktime: sessions[i].talk_time,
+        venue: sessions[i].venue.split(' ').join('-')
       }
       $(".speakers").append(template(speaker))
     }
@@ -25,6 +26,13 @@ $(document).ready(function() {
      return +a.getAttribute('time') - +b.getAttribute('time')
      })
      .appendTo(".speakers");
+
+     //ensure instructions are displaying
+     $('.instructions').show()
+     $('.steps-btn').on("click",function(e) {
+       event.preventDefault();
+       $('.instructions').fadeOut("slow");
+     })
 
     // Make 'session-box' Draggable and set properties
     $(".session-box").draggable({
@@ -43,7 +51,7 @@ $(document).ready(function() {
 
     })
     .click(function(event) {
-      $('.overlay').empty();
+      $('.info').empty();
       console.log($(event.target).data("id"))
       var selectedID = $(event.target).data("id");
       $.ajax({
@@ -64,22 +72,24 @@ $(document).ready(function() {
           speakerdesc: info[selectedID-1].speaker_desc,
           talkdesc: info[selectedID-1].talk_desc
         }
-        $(".overlay").append(template(details))
+        $(".info").append(template(details))
       })
-      $('.overlay').toggle();
+      // $('.overlay').toggle();
+
+      $('.overlay').animate({width:'toggle'},1000);
       })
     })
 
     $(document).on("keydown",function(e) {
     if (e.which == 27) {
       console.log('escape was hit!')
-      $('.overlay').hide()
+      $('.overlay').animate({width:'toggle'},1000);
       }
     })
 
   //display slots for the itinerary
   var times = [9, 10, 11, 12, 13, 14, 15, 16]
-  var innertext = ["9:00am","10:00am","11:00am","L U N C H","1:00pm","2:00pm","3:00pm","4:00pm"]
+  var innertext = ["9:00","10:00","11:00","L U N C H","13:00","14:00","15:00","16:00"]
   var source = $("#timeslot").html();
   var template = Handlebars.compile(source);
   for (var i = 0; i < times.length; i++) {
@@ -122,7 +132,6 @@ $(document).ready(function() {
   function hoverTimeslot( event, ui ) {
     var slotTime = $(this).attr('time')
     var cardTime = $('.ui-draggable-active').attr('time')
-    debugger
     if ( slotTime == cardTime ) {
       return 'correct'
     }else {
@@ -153,7 +162,20 @@ $(document).ready(function() {
       //put text within the timeslot that it was dragged into
       $(this).html(
         ui.draggable.html()
+        + '<p>'
+        +'Location: '
+        + ui.draggable.attr('venue').split('-').join(' ')
+        + '</p>'
       )
+      .css({
+        "text-align": "left",
+      });
+
+      $(this).find("p").css({
+        "margin-left": "7em",
+        "margin-top": "0em",
+        "margin-bottom": "0em"
+      })
 
       // return false;
     }else {

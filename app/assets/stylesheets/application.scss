@@ -13,7 +13,8 @@
  *= require_tree .
  *= require_self
  */
-
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
 
 $font-stack: Inconsolata, Monaco, Consolas, 'Courier New', Courier;
 $primary-color: #0069af;
@@ -25,46 +26,142 @@ body {
   color: $primary-color;
 }
 
-.speakers, .itinerary, .instructions {
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 14px;
+}
+
+.speakers, .itinerary, .instructions, .overlay {
   display: inline-block;
-  margin: 0.5em;
   width: 45%;
   vertical-align: top;
   text-align: center;
-}
-
-
-.speakers {
-  height: 100vh;
-  overflow-y: scroll;
-}
-
-.itinerary, .instructions {
   height: 80vh;
   margin: 5% auto;
 }
 
-.instructions {
-  z-index: 10;
-  background-color: $primary-color;
+.overlay, .instructions {
+  text-align: center;
+  position:absolute;
+  top:0;
+  right: 4.5%;
+  bottom:0;
+  background-color:$primary-color;
+  z-index:9999;
+  border: 0.1px $primary-color solid;
+  color: white;
+  display: none;
+
+}
+
+.overlay img {
+  position: relative;
+  display: block;
+  width: 8em;
+  height: 8em;
+  text-align: center;
+  margin: 0 auto 2em;
+}
+
+.overlay .info {
+  padding: 2em;
+}
+
+.steps {
+  text-align: center;
+}
+
+.steps-btn {
+  width: 10%;
+  height: 10%;
+  color: white;
+  border: 1px white solid;
+  border-radius: 25px;
+}
+
+.steps-btn:hover {
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari */
+  transform: scale(1.2);
+}
+
+.instructions h2 {
   position: absolute;
+  vertical-align: middle;
+  top: 50%;
+  margin: -25% 0;
+  width: 100%;
+}
+
+.instructions h3 {
+  position: absolute;
+  vertical-align: middle;
+  top: 60%;
+  margin: -25% 0;
+  width: 100%;
+}
+
+.speakers {
+  overflow-y: scroll;
+}
+
+.itinerary {
+  display: inline-table;
+  table-layout: fixed;
+  border-collapse: collapse;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.itinerary-row {
+  display: table-row;
 }
 
 .timeslot {
+  display: table-cell;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  display: block;
-  width: 100%;
-  height: 4em;
-  border: 2px black solid;
-  vertical-align: middle;
+  height: 3.95em;
+  border: 0.1px black solid;
+  width: 10%;
+  text-align: center;
 }
 
-.timeslot img{
+.timeslot>h2 {
+  margin-left: 5em;
+  padding: 1px;
+}
+
+.timeslot>p {
+  margin-left: 0em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+
+}
+
+.timeslot h2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.timeslot img {
   position: relative;
   float: left;
   display: inline-block;
-  width: 4em;
-  height: 4em;
+  width: 3.95em;
+  height: 3.95em;
 }
 
 .session-box {
@@ -75,38 +172,31 @@ body {
   text-align: center;
   margin: 1%;
   vertical-align: text-top;
+  box-sizing:border-box;
+}
+
+.session-box:hover {
+  border: 1px solid $primary-color;
 }
 
 .session-box h2 {
-  font-size: 32px;
   padding-top: 10%;
   text-align: center;
   margin: 0 auto;
 }
 
-.session-box h3 {
+.session-box p {
   position: absolute;
-  top: 60%;
+  top: 65%;
+  font-size: 14px;
 }
 
-.overlay {
-    position:absolute;
-    top:10%;
-    left:10%;
-    right:10%;
-    bottom:10%;
-    background-color:rgba(0, 0, 0, 0.85);
-    background: url(data:;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABl0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuNUmK/OAAAAATSURBVBhXY2RgYNgHxGAAYuwDAA78AjwwRoQYAAAAAElFTkSuQmCC) repeat scroll transparent\9;
-    z-index:9999;
-    color:white;
-    display:none;
-}
 
 img {
   opacity: 0.3;
   width:100%;
   position: absolute;
-  left: 0px;
+  left: 0;
   z-index: -1;
 }
 

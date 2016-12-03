@@ -6,7 +6,22 @@
   <div class="itinerary"></div>
 
   <div class="overlay">
-      <div class="txt">Overlay</div>
+    <div class="info">
+
+    </div>
+
+  </div>
+
+  <div class="instructions">
+    <span class="steps">
+      <h2>Create your day at wdiCONF.</h2>
+      <h3>Drag and drop your favourite talks into the itinerary to curate your day.<br>
+        <br>
+        <button class="steps-btn" type="submit">
+          <i class="fa fa-check"></i>
+        </button>
+      </h3>
+    </span>
   </div>
 
 </container>
@@ -21,25 +36,29 @@
 
 
 <script id="session-box" type="text/x-handlebars-template">
-  <span class="session-box draggable" time={{talktime}} data-id={{sessionid}}>
+  <span class="session-box draggable" time={{talktime}} venue={{venue}} data-id={{sessionid}}>
     <img src="{{speakerimg}}" alt="" data-id={{sessionid}}>
     <h2 data-id={{sessionid}}>{{speakername}}</h2>
-    <h3 data-id={{sessionid}}>{{talktitle}} @ {{talktime}}:00</h3>
+    <p data-id={{sessionid}}>{{talktitle}} @ {{talktime}}:00</p>
   </span>
 </script>
 
 <script id="timeslot" type="text/x-handlebars-template">
-  <span class="timeslot" time={{talktime}}>
-    <p>{{text}}</p>
+    <div class="itinerary-row">
+      <span class="timeslot" time={{talktime}}>
+        <p>{{text}}</p>
 
-  </span>
+      </span>
+    </div>
 </script>
 
 <script id="overlay" type="text/x-handlebars-template">
   <img src="{{speakerimg}}" alt="">
-  <h1>{{speakername}}</h1>
-  <h2>{{talktitle}}</h2>
-
-  <h2>{{speakerdesc}}</h2>
-  <h2>{{talkdesc}}</h2>
+  <h2>{{speakername}} </h2><br>
+  <p>presents<p><br>
+  <h3>"{{talktitle}}"</h3><br>
+  ~
+  <br><br>
+  <h4>{{speakerdesc}}</h4><br>
+  <h4>{{talkdesc}}</h4>
 </script>
