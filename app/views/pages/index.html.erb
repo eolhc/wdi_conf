@@ -4,6 +4,11 @@
   <div class="speakers"></div>
 
   <div class="itinerary"></div>
+
+  <div class="overlay">
+      <div class="txt">Overlay</div>
+  </div>
+
 </container>
 
 <div class="news"> </div>
@@ -14,11 +19,12 @@
   </span>
 </div>
 
+
 <script id="session-box" type="text/x-handlebars-template">
-  <span class="session-box draggable" time={{talktime}}>
-    <img src="{{speakerimg}}" alt="">
-    <h2 class="{{sessionid}}">{{speakername}}</h2>
-    <h3>{{talktitle}} @ {{talktime}}:00</h3>
+  <span class="session-box draggable" time={{talktime}} data-id={{sessionid}}>
+    <img src="{{speakerimg}}" alt="" data-id={{sessionid}}>
+    <h2 data-id={{sessionid}}>{{speakername}}</h2>
+    <h3 data-id={{sessionid}}>{{talktitle}} @ {{talktime}}:00</h3>
   </span>
 </script>
 
@@ -27,4 +33,13 @@
     <p>{{text}}</p>
 
   </span>
+</script>
+
+<script id="overlay" type="text/x-handlebars-template">
+  <img src="{{speakerimg}}" alt="">
+  <h1>{{speakername}}</h1>
+  <h2>{{talktitle}}</h2>
+
+  <h2>{{speakerdesc}}</h2>
+  <h2>{{talkdesc}}</h2>
 </script>

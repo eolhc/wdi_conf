@@ -25,7 +25,6 @@ body {
   color: $primary-color;
 }
 
-
 .speakers, .itinerary, .instructions {
   display: inline-block;
   margin: 0.5em;
@@ -88,6 +87,19 @@ body {
 .session-box h3 {
   position: absolute;
   top: 60%;
+}
+
+.overlay {
+    position:absolute;
+    top:10%;
+    left:10%;
+    right:10%;
+    bottom:10%;
+    background-color:rgba(0, 0, 0, 0.85);
+    background: url(data:;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABl0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuNUmK/OAAAAATSURBVBhXY2RgYNgHxGAAYuwDAA78AjwwRoQYAAAAAElFTkSuQmCC) repeat scroll transparent\9;
+    z-index:9999;
+    color:white;
+    display:none;
 }
 
 img {
