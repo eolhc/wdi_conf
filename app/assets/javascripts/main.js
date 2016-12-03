@@ -12,6 +12,7 @@ $(document).ready(function() {
     var template = Handlebars.compile(source);
     for (var i = 0; i < sessions.length; i++) {
       speaker = {
+        sessionid: sessions[i].id,
         speakerimg: sessions[i].speaker_img,
         speakername: sessions[i].speaker_name,
         talktitle: sessions[i].talk_title,
