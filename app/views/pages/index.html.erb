@@ -1,8 +1,10 @@
 <div class="about"></div>
 
-<div class="speakers"></div>
+<container class="planner">
+  <div class="speakers"></div>
 
-<div class="itinerary"></div>
+  <div class="itinerary"></div>
+</container>
 
 <div class="news"> </div>
 
@@ -15,7 +17,7 @@
 <script id="session-box" type="text/x-handlebars-template">
   <span class="session-box draggable" time={{talktime}}>
     <img src="{{speakerimg}}" alt="">
-    <h2>{{speakername}}</h2>
+    <h2 class="{{sessionid}}">{{speakername}}</h2>
     <h3>{{talktitle}}</h3>
   </span>
 </script>
