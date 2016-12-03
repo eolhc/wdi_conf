@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    //display all the speakers
+  //display all the speakers
   $.ajax({
     url: "/api/displayspeakers",
     method: "get"
@@ -20,6 +20,11 @@ $(document).ready(function() {
       }
       $(".speakers").append(template(speaker))
     }
+    //display speakers in order
+    $(".speakers").find('.session-box').sort(function (a, b) {
+     return +a.getAttribute('time') - +b.getAttribute('time')
+     })
+     .appendTo(".speakers");
 
     // Make 'session-box' Draggable and set properties
     $(".session-box").draggable({

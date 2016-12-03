@@ -24,10 +24,7 @@ body {
   font-family: $font-stack;
   color: $primary-color;
 }
-//
-// .planner {
-//   overflow-x: hidden !important;
-// }
+
 
 .speakers, .itinerary, .instructions {
   display: inline-block;
@@ -41,8 +38,6 @@ body {
 .speakers {
   height: 100vh;
   overflow-y: scroll;
-  // overflow-y: scroll;
-  // overflow-x: auto;
 }
 
 .itinerary, .instructions {

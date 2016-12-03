@@ -114,7 +114,7 @@ talk_genre = [
   "Ruby",
   "JavaScript"
   ];
-talk_time = [9, 10, 11, 1, 2, 3, 4, 9, 10, 11, 1, 2, 3, 4, 9, 10, 11, 1, 2, 3, 4];
+talk_time = [9, 10, 11, 13, 14, 15, 16, 9, 10, 11, 13, 14, 15, 16, 9, 10, 11, 13, 14, 15, 16];
 speaker_img = [];
 venue = [
   'The Pudding Room',
