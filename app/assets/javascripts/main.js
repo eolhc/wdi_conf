@@ -21,6 +21,11 @@ $(document).ready(function() {
       $(".speakers").append(template(speaker))
     }
 
+    $(".speakers").find('.session-box').sort(function (a, b) {
+     return +a.getAttribute('time') - +b.getAttribute('time')
+     })
+     .appendTo(".speakers");
+
     // Make 'session-box' Draggable and set properties
     $(".session-box").draggable({
 
