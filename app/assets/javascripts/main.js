@@ -42,7 +42,40 @@ $(document).ready(function() {
       // }
 
     })
-  })
+    .click(function(event) {
+      $('.overlay').empty();
+      console.log($(event.target).data("id"))
+      var selectedID = $(event.target).data("id");
+      $.ajax({
+        url: "/api/displayspeakers",
+        method: "get"
+      })
+      .done(function(response) {
+        var info = response;
+        var source = $("#overlay").html();
+        var template = Handlebars.compile(source);
+
+        //using ID of speaker in little box
+        //get session details
+        details = {
+          speakerimg: info[selectedID-1].speaker_img,
+          speakername: info[selectedID-1].speaker_name,
+          talktitle: info[selectedID-1].talk_title,
+          speakerdesc: info[selectedID-1].speaker_desc,
+          talkdesc: info[selectedID-1].talk_desc
+        }
+        $(".overlay").append(template(details))
+      })
+      $('.overlay').toggle();
+      })
+    })
+
+    $(document).on("keydown",function(e) {
+    if (e.which == 27) {
+      console.log('escape was hit!')
+      $('.overlay').hide()
+      }
+    })
 
   //display slots for the itinerary
   var times = [9, 10, 11, 12, 13, 14, 15, 16]
@@ -128,4 +161,7 @@ $(document).ready(function() {
       // return true;
     }
   }
+
+  //display individual profile
+
 })
