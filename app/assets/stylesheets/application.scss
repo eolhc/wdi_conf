@@ -40,7 +40,7 @@ body {
 
 .speakers {
   height: 100vh;
-  overflow: hidden;
+  overflow-y: scroll;
   // overflow-y: scroll;
   // overflow-x: auto;
 }
@@ -60,9 +60,17 @@ body {
   box-sizing: border-box;
   display: block;
   width: 100%;
-  height: 12.5%;
+  height: 4em;
   border: 2px black solid;
   vertical-align: middle;
+}
+
+.timeslot img{
+  position: relative;
+  float: left;
+  display: inline-block;
+  width: 4em;
+  height: 4em;
 }
 
 .session-box {
