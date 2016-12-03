@@ -45,7 +45,7 @@ $(document).ready(function() {
   })
 
   //display slots for the itinerary
-  var times = [9, 10, 11, 12, 1, 2, 3, 4]
+  var times = [9, 10, 11, 12, 13, 14, 15, 16]
   var innertext = ["9:00am","10:00am","11:00am","L U N C H","1:00pm","2:00pm","3:00pm","4:00pm"]
   var source = $("#timeslot").html();
   var template = Handlebars.compile(source);
