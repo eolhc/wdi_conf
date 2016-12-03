@@ -18,6 +18,10 @@
 $font-stack: Inconsolata, Monaco, Consolas, 'Courier New', Courier;
 $primary-color: #0069af;
 
+// html,body {
+//   overflow-x:hidden !important;
+// }
+
 body {
   text-align: center;
   font-family: $font-stack;
