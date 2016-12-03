@@ -23,17 +23,19 @@ $(document).ready(function() {
 
     // Make 'session-box' Draggable and set properties
     $(".session-box").draggable({
-      // containment: '#timeslot',
-      // stack: '#cardPile div',
+
+      helper: 'clone',
+      revert: true,
       cursor: 'move',
-      revert: function(event){
-        var slotTime = $(this).attr('time')
-        var cardTime = event.attr('time')
-        if (slotTime != cardTime) return true
-      }
-      // scope: function() {
-      //   this.attr('time')
+      // stop: function(event, ui) {
+      //     $(ui.helper).revert('true')
       // }
+      // revert: function(event){
+      //   var slotTime = $(this).attr('time')
+      //   var cardTime = event.attr('time')
+      //   if (slotTime != cardTime) return true
+      // }
+
     })
   })
 
@@ -77,8 +79,14 @@ $(document).ready(function() {
       ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
       //ui.draggable.draggable( 'option', 'revert', false );
 
+
       //take text within the session box that was selected for dragging
+      //ui.draggable.html()
       //put text within the timeslot that it was dragged into
+      $(this).html(
+        ui.draggable.html()
+      )
+
       return false;
     }else {
       return true;
