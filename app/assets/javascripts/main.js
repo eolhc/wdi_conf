@@ -30,7 +30,7 @@ $(document).ready(function() {
     $(".session-box").draggable({
 
       helper: 'clone',
-      revert: true,
+      //revert: true,
       cursor: 'move',
       // stop: function(event, ui) {
       //     $(ui.helper).revert('true')
@@ -60,12 +60,42 @@ $(document).ready(function() {
 
   // Make 'timeslot' Draggable and set properties
   $(".timeslot").droppable({
-    drop: placeSession,
-    hoverClass: 'hoverTimeslot',
+    hoverClass: hoverTimeslot,
+
+    // over: function( event, ui ) {
+    //   var slotTime = $(this).attr('time')
+    //   var cardTime = ui.draggable.attr('time')
+    //   if ( slotTime == cardTime ) {
+    //     $(this).hover(function() {
+    //       $(this).css("background-color","green")
+    //     })
+    //   }else {
+    //     $(this).hover(function() {
+    //       $(this).css("background-color","red")
+    //     })
+    //   }
+    // },
+    // out: function(){
+    //   $(this).css("background-color","")
+    // },
+    tolerance: "pointer",
+
+    drop: placeSession
     // scope: function() {
     //   this.attr('time')
     // }
   })
+
+  function hoverTimeslot( event, ui ) {
+    var slotTime = $(this).attr('time')
+    var cardTime = $('.ui-draggable-active').attr('time')
+    debugger
+    if ( slotTime == cardTime ) {
+      return 'correct'
+    }else {
+      return 'wrong'
+    }
+  }
 
 
   function placeSession( event, ui ) {
@@ -81,7 +111,7 @@ $(document).ready(function() {
       //ui.draggable.addClass( 'correct' );
       //ui.draggable.draggable( 'disable' );
       //$(this).droppable( 'disable' );
-      ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+      //ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
       //ui.draggable.draggable( 'option', 'revert', false );
 
 
@@ -92,9 +122,10 @@ $(document).ready(function() {
         ui.draggable.html()
       )
 
-      return false;
+      // return false;
     }else {
-      return true;
+
+      // return true;
     }
   }
 })
