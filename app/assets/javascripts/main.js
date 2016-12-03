@@ -75,6 +75,9 @@ $(document).ready(function() {
       //$(this).droppable( 'disable' );
       ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
       //ui.draggable.draggable( 'option', 'revert', false );
+
+      //take text within the session box that was selected for dragging
+      //put text within the timeslot that it was dragged into
       return false;
     }else {
       return true;
