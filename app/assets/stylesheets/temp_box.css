@@ -1,0 +1,21 @@
+.timeslot {
+  width: 150px;
+  height: 250px;
+}
+
+.session-box{
+  width: 150px;
+  height: 100px;
+  cursor: pointer;
+}
+
+
+
+.hoverTimeslot{
+  background-color: #677291;
+}
+
+
+.hovered {
+
+}
