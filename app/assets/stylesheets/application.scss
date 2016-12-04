@@ -109,7 +109,7 @@ ul.topnav li.icon {display: none;}
   }
 }
 
-.speakers, .itinerary, .instructions h2 {
+.speakers, .itinerary, .instructions, .overlay h2 {
   font-size: 24px;
 }
 
@@ -250,8 +250,8 @@ p {
   position: relative;
   float: left;
   display: inline-block;
-  width: 3.95em;
-  height: 3.95em;
+  width: 2.55em;
+  height: 2.55em;
 }
 
 .session-box {
