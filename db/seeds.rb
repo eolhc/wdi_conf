@@ -29,7 +29,7 @@ speaker_desc = [
   "Charith saves kittens by night and writes stories about Ruby by the day.",
   "The numbers don't lie and neither does Dean, the data expert. Know your customers, know your numbers. Know your Dean.",
   "Duyen is a creative soul, constantly challenging the limits of CSS and coding today.",
-  "EJ is a professional web explorer. Also a sasquatch observer in her spare time. Please get in touch if you sight a sasquatch.",
+  "EJ is a professional web and sasquatch explorer, seeking to defy expectations and constantly striving to bring credibility to the sasquatch name.",
   "James is the founder of the popular dating app for 12-18 year olds, 'PuppyLoveMeUp'.",
   "Jason codes in JavaScript like Shakespeare wrote sonnets. Professional romancer in JavaScript.",
   "Ka is a top stackoverflow contributor and YouTube channel 'KaChingKaChan' where he gives advice on creating side projects that leave you with a tidy sum of side cash.",
@@ -43,7 +43,7 @@ speaker_desc = [
   "Sean is a professional poker player and is known for his creative take on poker with 'pokerOn'.",
   "Tim is known for his music app 'TuneIn'.",
   "Chloe is known for creating everything from code to terrible personal profiles.",
-  "Kerrie may or may not be a prevalent darknets drug lord. Maybe. Maybe not. But maybe."
+  "Kerrie may or may not be a prevalent darknets drug lord. Maybe. Maybe not. But y'know, maybe."
 ];
 talk_title = [
   "What's New in HTML 5.1",
@@ -75,7 +75,7 @@ talk_desc = [
   "Charith talks about Aurelia, the next-generation open-source JavaScript client framework and how it can be paired with Redux.",
   "Google Analytics expert Dean talks about stalking your favourite users' behaviours.",
   "Duyen carries us through the basic mechanics of creating a chatbot. If you're lonely, please attend.",
-  "EJ talks about the perks of pair programming and how it actually enlivens our souls and increases productivity",
+  "Today, EJ propounds the perks of pair programming.",
   "James gets deep with Deepstream,  an Open-Source Server for Building Realtime Apps",
   "Jason talks about JS Fatigue, what we can learn and how to get well again.",
   "Mr Chan encourages us to get online with Thredded, the best possible Rails 4.2+ forum in existence.",
@@ -89,7 +89,7 @@ talk_desc = [
   "Learn how to learn Angular with Sean Karita. From the basics to the very best tips.",
   "How responsive should responsive design be? What are the limits? Tim talks us through incorporating it with the more advanced plaforms of today.",
   "Chloe takes us back to basics with a simple network stack in Ruby.",
-  "Kerrie takes us on an adventure with ES6. Explore. Learn. Grow. Kerrie knows."
+  "Kerrie takes us on an adventure with E... S6. Explore. Learn. Grow."
   ];
 talk_genre = [
   "HTML/CSS",
