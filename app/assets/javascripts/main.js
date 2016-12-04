@@ -184,6 +184,30 @@ $(document).ready(function() {
     }
   }
 
+  //scrolling menu
+  $("#myTopnav li").click(function(){
+
+    scrollTo($(this).data('location'));
+  });
+  //scrollTo($("#sponsors"));
+
+  function scrollTo(element){
+
+    $('html, body').animate({
+      scrollTop: $(element).offset().top
+    }, 500);
+  }
+  // fixed nav abr menu
+  $(window).scroll(function () {
+   if ($(window).scrollTop() > 201) {
+     $('nav').addClass('nav-fixed');
+   }
+   if ($(window).scrollTop() < 201) {
+     $('nav').removeClass('nav-fixed');
+   }
+ });
+
+
   //display individual profile
 
 })

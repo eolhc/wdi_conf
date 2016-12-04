@@ -26,7 +26,7 @@ body {
   color: $primary-color;
 }
 
-<<<<<<< HEAD
+
 
 .banner h1 {
   font-size: 5em;
@@ -41,6 +41,12 @@ body {
 
 .topnav {
 
+}
+.nav-fixed {
+    top: 0;
+    z-index: 100;
+  position: fixed;
+    width: 100%;
 }
 
 ul.topnav {
@@ -99,9 +105,7 @@ ul.topnav li.icon {display: none;}
   }
 }
 
-.speakers, .itinerary, .instructions {
-=======
-h2 {
+.speakers, .itinerary, .instructions h2 {
   font-size: 24px;
 }
 
@@ -118,7 +122,6 @@ p {
 }
 
 .speakers, .itinerary, .instructions, .overlay {
->>>>>>> 80fd8e239afd1f8733a519f98b6761405cf51a49
   display: inline-block;
   width: 45%;
   vertical-align: top;
