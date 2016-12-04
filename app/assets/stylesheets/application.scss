@@ -312,6 +312,8 @@ p {
 
 .news, .location {
   width: 45%;
+  text-align: left;
+  display: inline-block;
 }
 
 @keyframes animatedBackground {
