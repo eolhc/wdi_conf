@@ -24,6 +24,22 @@ body {
   text-align: center;
   font-family: $font-stack;
   color: $primary-color;
+	width: 100%;
+	height: 100%;
+	background-image: url(38436.svg);
+  background-size: 25px;
+  background-position: 0px 0px;
+	background-repeat: repeat-x repeat-y;
+	animation: animatedBackground 80s linear infinite;
+}
+
+header {
+  height: 20em;
+  width: 100%;
+}
+
+header img {
+  width: 20em;
 }
 
 .speakers, .itinerary, .planner, .news, .about, .banner,
@@ -84,29 +100,8 @@ ul.topnav li a:hover {background-color: #555;}
 
 ul.topnav li.icon {display: none;}
 
-@media screen and (max-width:680px) {
-  ul.topnav li:not(:first-child) {display: none;}
-  ul.topnav li.icon {
-    float: right;
-    display: inline-block;
-  }
-}
-
-@media screen and (max-width:680px) {
-  ul.topnav.responsive {position: relative;}
-  ul.topnav.responsive li.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  ul.topnav.responsive li {
-    float: none;
-    display: inline;
-  }
-  ul.topnav.responsive li a {
-    display: block;
-    text-align: left;
-  }
+.about {
+  width: 90%;
 }
 
 .speakers, .itinerary, .instructions, .overlay h2 {
@@ -135,6 +130,7 @@ p {
   vertical-align: top;
   text-align: center;
   height: 80vh;
+  background-color: white;
 }
 
 .planner {
@@ -152,7 +148,6 @@ p {
   border: 0.1px $primary-color solid;
   color: white;
   display: none;
-
 }
 
 .overlay img {
@@ -282,12 +277,12 @@ p {
 }
 
 
-img {
+.session-box img {
   opacity: 0.3;
   width:100%;
   position: absolute;
   left: 0;
-  z-index: -1;
+  z-index: 10;
 }
 
 
@@ -313,4 +308,38 @@ img {
 
 .wrong {
   background-color: #ec7976 !important;
+}
+
+.news, .location {
+  width: 45%;
+}
+
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+
+@media screen and (max-width:680px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:680px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
 }
