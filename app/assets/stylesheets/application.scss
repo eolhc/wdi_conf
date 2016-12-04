@@ -46,10 +46,11 @@ body {
 
 }
 .nav-fixed {
-    top: 0;
-    z-index: 100;
+  top: 0;
+  z-index: 100;
   position: fixed;
-    width: 100%;
+  width: 100%;
+
 }
 
 ul.topnav {
@@ -147,7 +148,7 @@ p {
   right: 4.5%;
   bottom:0;
   background-color:$primary-color;
-  z-index:9999;
+  z-index:10;
   border: 0.1px $primary-color solid;
   color: white;
   display: none;
