@@ -36,7 +36,9 @@ $(document).ready(function() {
 
     // Make 'session-box' Draggable and set properties
     $(".session-box").draggable({
-
+      start: function(e, ui){
+        $(ui.helper).addClass("ui-draggable-helper");
+      },
       helper: 'clone',
       //revert: true,
       cursor: 'move',
@@ -104,23 +106,9 @@ $(document).ready(function() {
   // Make 'timeslot' Draggable and set properties
   $(".timeslot").droppable({
     hoverClass: hoverTimeslot,
-
-    // over: function( event, ui ) {
-    //   var slotTime = $(this).attr('time')
-    //   var cardTime = ui.draggable.attr('time')
-    //   if ( slotTime == cardTime ) {
-    //     $(this).hover(function() {
-    //       $(this).css("background-color","green")
-    //     })
-    //   }else {
-    //     $(this).hover(function() {
-    //       $(this).css("background-color","red")
-    //     })
-    //   }
-    // },
-    // out: function(){
-    //   $(this).css("background-color","")
-    // },
+    out: function(){
+      $(this).css("background-color","")
+    },
     tolerance: "pointer",
 
     drop: placeSession
@@ -131,7 +119,7 @@ $(document).ready(function() {
 
   function hoverTimeslot( event, ui ) {
     var slotTime = $(this).attr('time')
-    var cardTime = $('.ui-draggable-active').attr('time')
+    var cardTime = $('.ui-draggable-helper').attr('time')
     if ( slotTime == cardTime ) {
       return 'correct'
     }else {
@@ -176,23 +164,19 @@ $(document).ready(function() {
         "margin-top": "0em",
         "margin-bottom": "0em"
       })
-
       // return false;
     }else {
-
       // return true;
     }
   }
 
   //scrolling menu
   $("#myTopnav li").click(function(){
-
     scrollTo($(this).data('location'));
   });
   //scrollTo($("#sponsors"));
 
   function scrollTo(element){
-
     $('html, body').animate({
       scrollTop: $(element).offset().top
     }, 500);
