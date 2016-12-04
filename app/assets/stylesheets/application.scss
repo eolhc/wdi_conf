@@ -26,7 +26,10 @@ body {
   color: $primary-color;
 }
 
-
+.speakers, .itinerary, .planner, .news, .about, .banner,
+.overlay, .instructions {
+  margin: 5% auto;
+}
 
 .banner h1 {
   font-size: 5em;
@@ -121,13 +124,20 @@ p {
   font-size: 14px;
 }
 
+.itinerary-wrapper {
+  position: relative;
+}
+
 .speakers, .itinerary, .instructions, .overlay {
   display: inline-block;
   width: 45%;
   vertical-align: top;
   text-align: center;
   height: 80vh;
-  margin: 5% auto;
+}
+
+.planner {
+  position: relative;
 }
 
 .overlay, .instructions {
@@ -212,7 +222,7 @@ p {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  height: 3.95em;
+  height: 2.6em;
   border: 0.1px black solid;
   width: 10%;
   text-align: center;
@@ -245,8 +255,8 @@ p {
 
 .session-box {
   display: inline-block;
-  width: 10em;
-  height: 10em;
+  width: 7em;
+  height: 7em;
   position: relative;
   text-align: center;
   margin: 1%;
