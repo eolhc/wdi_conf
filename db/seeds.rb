@@ -115,7 +115,30 @@ talk_genre = [
   "JavaScript"
   ];
 talk_time = [9, 10, 11, 13, 14, 15, 16, 9, 10, 11, 13, 14, 15, 16, 9, 10, 11, 13, 14, 15, 16];
-speaker_img = [];
+
+speaker_img = ["headshots/ari.jpg",
+  "headshots/bruno.jpg",
+  "headshots/catherine.jpg",
+  "headshots/charith.jpg",
+  "headshots/dean.jpg",
+  "headshots/duyen.jpg",
+  "headshots/ej.jpg",
+  "headshots/james.png",
+  "headshots/jason.jpg",
+  "headshots/ka.jpg",
+  "headshots/leon.jpg",
+  "headshots/melissa.jpg",
+  "headshots/micah.jpg",
+  "headshots/nick.jpg",
+  "headshots/paulm.jpg",
+  "headshots/paulw.jpg",
+  "headshots/pedro.jpg",
+  "headshots/sean.jpg",
+  "headshots/tim.jpg",
+  "headshots/chloe.jpg",
+  "headshots/kerrie.jpg"
+  ];
+
 venue = [
   'The Pudding Room',
   'The Pudding Room',
@@ -141,7 +164,7 @@ venue = [
   ];
 social_media = [];
 
-Session.destroy_all
+Session.destroy_all;
 speaker_name.each_with_index do |speaker, index|
   Session.create({
     speaker_name: speaker_name[index],
@@ -150,7 +173,7 @@ speaker_name.each_with_index do |speaker, index|
     talk_desc: talk_desc[index],
     talk_genre: talk_genre[index],
     talk_time: talk_time[index],
-    speaker_img: "https://gravatar.com/avatar/9ff6dec3587cfb45fbcd907d96fb6c6b?s=80&d=https://codepen.io/assets/avatars/user-avatar-80x80-bdcd44a3bfb9a5fd01eb8b86f9e033fa1a9897c3a15b33adfc2649a002dab1b6.png",
+    speaker_img: speaker_img[index],
     venue: venue[index],
     social_media: "@something"
   });

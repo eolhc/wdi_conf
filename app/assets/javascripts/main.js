@@ -57,7 +57,7 @@ $(document).ready(function() {
     })
     .click(function(event) {
       $('.info').empty();
-      console.log($(event.target).data("id"))
+      console.log($(event.target).data("id"));
       var selectedID = $(event.target).data("id");
       $.ajax({
         url: "/api/displayspeakers",
@@ -65,6 +65,8 @@ $(document).ready(function() {
       })
       .done(function(response) {
         var info = response;
+        console.log("click on overlay:" + response);
+        console.log(response)
         var source = $("#overlay").html();
         var template = Handlebars.compile(source);
 
