@@ -45,7 +45,7 @@
 
 <script id="session-box" type="text/x-handlebars-template">
   <span class="session-box draggable" time={{talktime}} venue={{venue}} data-id={{sessionid}}>
-    <img src="{{speakerimg}}" alt="" data-id={{sessionid}}>
+    <img src="/images/{{speakerimg}}" alt="" data-id={{sessionid}}>
     <h2 data-id={{sessionid}}>{{speakername}}</h2>
     <p data-id={{sessionid}}>{{talktitle}} @ {{talktime}}:00</p>
   </span>
@@ -61,12 +61,13 @@
 </script>
 
 <script id="overlay" type="text/x-handlebars-template">
-  <img src="{{speakerimg}}" alt="">
+  <img src="/images/{{speakerimg}}" alt="">
   <h2>{{speakername}} </h2><br>
   <p>presents<p><br>
   <h3>"{{talktitle}}"</h3><br>
   ~
   <br><br>
-  <h4>{{speakerdesc}}</h4><br>
-  <h4>{{talkdesc}}</h4>
+  <h4>{{talkdesc}}</h4><br>
+  <p>{{speakerdesc}}</p><br>
+
 </script>
