@@ -179,7 +179,7 @@ $(document).ready(function() {
   function scrollTo(element){
     $('html, body').animate({
       scrollTop: $(element).offset().top
-    }, 500);
+    },  1000);
   }
   // fixed nav abr menu
   $(window).scroll(function () {
