@@ -316,6 +316,13 @@ p {
   display: inline-block;
 }
 
+#close-window {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  cursor: pointer;
+}
+
 @keyframes animatedBackground {
 	from { background-position: 0 0; }
 	to { background-position: 100% 0; }
@@ -344,4 +351,8 @@ p {
     display: block;
     text-align: left;
   }
+}
+
+#close-window {
+  z-index: 230;
 }

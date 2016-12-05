@@ -33,7 +33,10 @@ $(document).ready(function() {
        event.preventDefault();
        $('.instructions').fadeOut("slow");
      })
-
+     $('#close-window').on("click",function(e) {
+       event.preventDefault();
+       $('.overlay').fadeOut("slow");
+     })
     // Make 'session-box' Draggable and set properties
     $(".session-box").draggable({
       start: function(e, ui){
@@ -75,12 +78,18 @@ $(document).ready(function() {
           talkdesc: info[selectedID-1].talk_desc
         }
         $(".info").append(template(details))
+
       })
       // $('.overlay').toggle();
 
       $('.overlay').animate({width:'toggle'},1000);
+
       })
+
+
     })
+
+
 
     $(document).on("keydown",function(e) {
     if (e.which == 27) {
@@ -88,6 +97,8 @@ $(document).ready(function() {
       $('.overlay').animate({width:'toggle'},1000);
       }
     })
+
+
 
   //display slots for the itinerary
   var times = [9, 10, 11, 12, 13, 14, 15, 16]
@@ -182,16 +193,19 @@ $(document).ready(function() {
     },  1000);
   }
   // fixed nav abr menu
+  var twentyEms = Number(getComputedStyle(document.body, "").fontSize.match(/(\d*(\.\d*)?)px/)[1]) * 20;
   $(window).scroll(function () {
-   if ($(window).scrollTop() > 201) {
+   if ($(window).scrollTop() > twentyEms) {
      $('nav').addClass('nav-fixed');
    }
-   if ($(window).scrollTop() < 201) {
+   if ($(window).scrollTop() < twentyEms) {
      $('nav').removeClass('nav-fixed');
    }
  });
 
 
   //display individual profile
-
+  $('#close-window').on("click",function(e) {
+    $('.overlay').animate({width:'toggle'},1000)
+  })
 })
