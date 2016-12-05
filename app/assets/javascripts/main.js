@@ -180,7 +180,7 @@ $(document).ready(function() {
       })
 
       //button to remove speaker from the timeslot
-      $('#remove-speaker').on("click",function(e) {
+      $('.remove-speaker').on("click",function(e) {
         console.log('removed');
         this.parentElement.style.textAlign = 'center';
         $(this.parentElement).html('<p>'+ this.parentElement.attributes.time.value +':00</p>')
