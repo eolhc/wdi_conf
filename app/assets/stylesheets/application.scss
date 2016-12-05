@@ -323,6 +323,14 @@ p {
   cursor: pointer;
 }
 
+.remove-speaker {
+  display: inline;
+  float: right;
+  padding-top: 2%;
+  cursor: pointer;
+  color: red;
+}
+
 @keyframes animatedBackground {
 	from { background-position: 0 0; }
 	to { background-position: 100% 0; }

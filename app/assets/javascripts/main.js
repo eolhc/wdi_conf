@@ -160,7 +160,8 @@ $(document).ready(function() {
       //ui.draggable.html()
       //put text within the timeslot that it was dragged into
       $(this).html(
-        ui.draggable.html()
+        '<i id="remove-speaker" class="fa fa-minus-square remove-speaker" aria-hidden="true"></i>'
+        +ui.draggable.html()
         + '<p>'
         +'Location: '
         + ui.draggable.attr('venue').split('-').join(' ')
@@ -175,11 +176,22 @@ $(document).ready(function() {
         "margin-top": "0em",
         "margin-bottom": "0em"
       })
+
+      //button to remove speaker from the timeslot
+      $('#remove-speaker').on("click",function(e) {
+        console.log('removed');
+        this.parentElement.style.textAlign = 'center';
+        $(this.parentElement).html('<p>'+ this.parentElement.attributes.time.value +':00</p>')
+
+      })
+
       // return false;
     }else {
       // return true;
     }
   }
+
+
 
   //scrolling menu
   $("#myTopnav li").click(function(){
@@ -204,8 +216,10 @@ $(document).ready(function() {
  });
 
 
-  //display individual profile
+ // button to close speaker info
   $('#close-window').on("click",function(e) {
     $('.overlay').animate({width:'toggle'},1000)
   })
+
+
 })
