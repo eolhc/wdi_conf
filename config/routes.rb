@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   post "/api/attendee/new", to: "api/attendee#new"
   post "/api/submitbooking", to: "api/booking#new"
+  post "/payment", to: "pages#payment"
 
 
 end
