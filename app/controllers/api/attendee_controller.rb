@@ -1,19 +1,15 @@
-class Api::AttendeesController < ApplicationController
+class Api::AttendeeController < ApplicationController
 
   def new
+    attendee = Attendee.new
+    attendee.first_name = params["first_name"]
+    attendee.last_name = params["second_name"]
+    attendee.email = params["email"]
+    attendee.phone = params["phone"]
+    attendee.save
 
+    attendee_id = attendee.id
+    render json: attendee_id
   end
-  def create
-    attendee = Attende.new
-    attende.first_name = params[:first_name]
-    attende.last_name = params[:second_name]
-    attende.email = params[:email]
-    attende.phone = params[:phone]
 
-    if attende.save
-      redirect_to '/'
-    else
-      render :new
-    end
-  end
 end

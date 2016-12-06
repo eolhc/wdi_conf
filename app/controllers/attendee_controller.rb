@@ -1,8 +1,10 @@
-class AttendeesController < ApplicationController
+class AttendeeController < ApplicationController
 
   def new
 
+    render :new
   end
+
   def create
     attendee = Attendee.new
     attendee.first_name = params[:first_name]

@@ -164,6 +164,8 @@ venue = [
   ];
 social_media = [];
 
+Attendee.destroy_all;
+Booking.destroy_all;
 Session.destroy_all;
 speaker_name.each_with_index do |speaker, index|
   Session.create({
