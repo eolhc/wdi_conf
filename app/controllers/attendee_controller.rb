@@ -1,5 +1,9 @@
 class AttendeeController < ApplicationController
 
+  def index
+
+  end
+
   def new
 
     render :new
@@ -11,7 +15,7 @@ class AttendeeController < ApplicationController
     attendee.last_name = params[:second_name]
     attendee.email = params[:email]
     attendee.phone = params[:phone]
-
+    raise issue
     if attendee.save
       redirect_to '/'
     else

@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-
+  // When user select sessions and click book tickets
   $('.submit-itinerary').click(function() {
     var source = $("#attendee-form").html();
     var template = Handlebars.compile(source);
@@ -16,8 +16,11 @@ $(document).ready(function() {
     //   getSessions();
     // });
 
+    //Add Event listener on the form submission
     $(function() {
+
       var $form = $('#payment-form');
+
       $form.submit(function(event) {
         // Disable the submit button to prevent repeated clicks:
         $form.find('.submit').prop('disabled', true);
@@ -31,6 +34,7 @@ $(document).ready(function() {
       });
     });
 
+    //Gram info from form, request token to Stripe API
     function stripeResponseHandler(status, response) {
       // Grab the form:
       var $form = $('#payment-form');
@@ -49,9 +53,12 @@ $(document).ready(function() {
         // Insert the token ID into the form so it gets submitted to the server:
         $form.append($('<input type="hidden" name="stripeToken">').val(token));
 
+        //pedro - testing get sessions from itinerary
+        $form.append($('<input type="hidden" name="sessions">').val( getSessions2() ));
 
         // Submit the form:
-        $form.get(0).submit();
+        $form.get(0).submit()
+
         // getSessions(token)
         console.log(token)
 
@@ -59,6 +66,23 @@ $(document).ready(function() {
     };
 
   })
+
+// --------------------pedro created to test -----------------
+function getSessions2() {
+
+  var timeslots = $('.timeslot')
+  var selectedSessions = []
+
+  for (var i = 0; i < timeslots.length; i++) {
+    if (timeslots[i].children[2]) {
+      selectedSessions.push($('.timeslot')[i].children[2].getAttribute('data-id'));
+    }
+  }
+  return selectedSessions
+}
+
+//------------------------------------------------------------
+
 
   function getSessions(token) {
 
