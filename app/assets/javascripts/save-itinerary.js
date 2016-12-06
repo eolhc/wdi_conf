@@ -1,21 +1,22 @@
 
-  $('.submit-itinerary').click(displayForm())
-  //ON CLICK I WANT A FORM TO DISPLAY
-  //APPEND BELOW ITINERARY
-  function displayForm() {
+$(document).ready(function() {
+
+  $('.submit-itinerary').click(function() {
     var source = $("#attendee-form").html();
     var template = Handlebars.compile(source);
     $('.attendee-form').append(template())
-  }
-
-  //then i want to create an attendee
-  //then i want to take the sessions selectedSessions
-  //and create a booking
-
-  $('.book-btn').click(getSessions());
+    .append($("<button>",{
+        id: 'book-btn',
+        text: "Submit Payment"
+      })
+    );
+    $('#book-btn').click(function() {
+      console.log('booking button clicked')
+      getSessions();
+    });
+  })
 
   function getSessions() {
-    console.log('hello')
 
     var timeslots = $('.timeslot')
     var selectedSessions = []
@@ -25,7 +26,9 @@
         selectedSessions.push($('.timeslot')[i].children[2].getAttribute('data-id'));
       }
     }
+
     newAttendee(selectedSessions)
+    console.log(selectedSessions)
   }
 
   function newAttendee(selectedSessions) {
@@ -55,6 +58,8 @@
       method: 'post',
       data: data
     }).done(function(response) {
-      console.log(response)
+      console.log("booking was submitted WITH ATTENDEE ID:"+response)
     })
   }
+
+})
