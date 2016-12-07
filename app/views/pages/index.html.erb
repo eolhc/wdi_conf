@@ -2,7 +2,6 @@
     <div class="attendee-form">
 
 
-
     </div>
 <div class="about" id="about">
   <h2>about wdiCONF 2k16</h2>
@@ -10,13 +9,13 @@
     <p>
       wdiCONF is a community-driven conference that traverses the frontier of our beautiful web.
     </p>
-    <p>Each year, wdiCONF brings together a new array of rising influencers on the web for a day packed of great energy, with influencers
+    <p>Each year, wdiCONF brings together a new array of rising influencers on the web for a day packed with great energy, with influencers
       sharing their knowledge via multi-track lectures and interactive workshops. wdiCONF 2k16's line-up is set to explore
       a mix of tech, design, products and more and leave you with exciting but practical takeaways.
     </p>
 <br>
 <br>
-<h2 id="planner">curate your planner</h2>
+<h2 id="planner">curate your wdiCONF</h2>
 </div>
 
 <div class="planner">
@@ -35,7 +34,7 @@
     <div class="instructions">
       <span class="steps">
         <h3>Select speakers to read about them.<br>
-          <b> Drag and drop your favourite talks into the itinerary to curate your day.<br>
+          Drag and drop your favourite talks into the itinerary to curate your day.<br>
           <br>
           <button class="steps-btn" type="submit">
             <i class="fa fa-check"></i>
@@ -44,7 +43,7 @@
       </span>
     </div>
 </div>
-<button class="submit-itinerary"><h3>book tickets</h3></button>
+<button class="submit-itinerary waves-light waves-effect">book tickets</button>
 
 
 <div class="news" id="news">
@@ -93,46 +92,65 @@
 
   <%= form_tag charges_path, id: "payment-form", method: "post" do %>
 
-    <div class="form-row">
-        <h4>First Name:</h4>
-        <input class="first_name" type="text" size="20" name="first_name" >
+    <h2>CHECKOUT</h2>
+    <br>
+    <h4>YOUR CART</h4>
+    <br>
+    <h5>$450.00 / </h5>
+    <h5>wdiCONF 2k16 Ticket / </h5>
+    <h5>Qty: 1</h5>
+
+    <br><br>
+    <h4>YOUR DETAILS</h4>
+
+    <div class="form-row input-field">
+      <input id="first_name" type="text" size="20" name="first_name" >
+      <label for="first_name">first name</label>
     </div>
 
-    <div class="form-row">
-        <h4>Last Name:</h4>
-        <input class="last_name" type="text" size="20" name="last_name" >
+    <div class="form-row input-field">
+      <input id="last_name" type="text" size="20" name="last_name" >
+      <label for="last_name">last name</label>
     </div>
 
-    <div class="form-row">
-        <h4>Phone Number :</h4>
-        <input class="email" type="text" size="20" name="email" >
+    <br>
+
+    <div class="form-row input-field">
+      <input id="email" type="text" size="20" name="email" >
+      <label for="email">email</label>
     </div>
 
-    <div class="form-row">
-        <h4>Email:</h4>
-        <input class="email" type="text" size="20" name="email" >
+    <div class="form-row input-field">
+      <input id="mobile" type="text" size="20" name="email" >
+      <label for="email">mobile</label>
     </div>
 
-    <div class="form-row">
-        <h4>Card Number</h4>
-        <input type="text" size="20" data-stripe="number">
+    <br>
+
+    <h4>PAYMENT INFORMATION</h4>
+    <div class="form-row input-field">
+      <input id="card" size="20" data-stripe="number">
+      <label for="card">card number</label>
     </div>
 
-    <div class="form-row">
-        <h4>Expiration (MM/YY)</h4>
-        <input type="text" size="2" data-stripe="exp_month">
-      <h4> / </h4>
-      <input type="text" size="2" data-stripe="exp_year">
+    <div class="form-row input-field verification">
+        <input id="expiry-mth" type="text" size="2" data-stripe="exp_month">
+        <label for="expiry-mth">mm</label>
+    </div>
+    <div class="form-row input-field verification">
+      <input id="expiry-yr" type="text" size="2" data-stripe="exp_year">
+      <label for="expiry-yr">yy</label>
     </div>
 
-    <div class="form-row">
-        <span>CVC</span>
-        <input type="text" size="4" data-stripe="cvc">
+    <div class="form-row input-field verification">
+      <input class="validate" id="cvc" type="text" size="4" data-stripe="cvc">
+      <label for="cvc">cvc</label>
     </div>
+    <br>
     <span class="payment-errors"></span>
-
+    <br>
     <input id="sessionsAdded" type="hidden" name="name" value="">
-    <input type="submit" class="submit" value="Submit Payment">
+    <input type="submit" class="submit btn" value="submit payment">
   <% end %>
 
 
