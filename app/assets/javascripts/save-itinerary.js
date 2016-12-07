@@ -4,10 +4,14 @@ $(document).ready(function() {
   $('.submit-itinerary').click(function() {
     var source = $("#attendee-form").html();
     var template = Handlebars.compile(source);
-    $('.attendee-form').append(template())
-    $('#payment-form').append("<i class='fa fa-window-close' id='close-payment-btn'>");
-                        // button to close speaker info
 
+    // Add template into form
+    $('.attendee-form').append(template())
+
+    // add button to close payment form
+    $('#payment-form').append("<i class='fa fa-window-close' id='close-payment-btn'>");
+
+    // Click Close Payment
     $('#close-payment-btn').on("click",function(e) {
       console.log('hi')
       $('.attendee-form').empty();
@@ -61,6 +65,7 @@ $(document).ready(function() {
 
   })
 
+  // Search all the sessions dropped into the schedule
   function getSessions() {
 
     var timeslots = $('.timeslot')

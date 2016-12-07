@@ -206,7 +206,7 @@ $(document).ready(function() {
       scrollTop: $(element).offset().top
     },  1000);
   }
-  // fixed nav abr menu
+  // Fix nav bar menu on top when scroll
   var twentyEms = Number(getComputedStyle(document.body, "").fontSize.match(/(\d*(\.\d*)?)px/)[1]) * 20;
   $(window).scroll(function () {
    if ($(window).scrollTop() > twentyEms) {
@@ -223,8 +223,8 @@ $(document).ready(function() {
     $('.overlay').animate({width:'toggle'},1000)
   })
 
-  //Remove Info card from map to make it more visible
-  $(".place-card").remove()
+  //tooltipped to drag session box
+  $('.tooltipped').tooltip({delay: 50});
 
 
 })

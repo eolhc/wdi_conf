@@ -13,19 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
  @import "font-awesome-sprockets";
  @import "font-awesome";
 
-$font-stack: Inconsolata, Monaco, Consolas, 'Courier New', Courier;
+// Main colors
 $primary-color: #0069af;
 $secondary-color: white;
 $tertiary-color: #EB5E00;
+$primary-font: 'Inconsolata', Monaco, Consolas, 'Courier New', Courier;
 $striped-background: #fafafa;
-
+$secondary-font: 'Poppins', sans-serif;
 
 body {
   text-align: center;
-  font-family: $font-stack;
+  font-family: $primary-font;
   color: $primary-color;
 	width: 100%;
 	height: 100%;
@@ -46,14 +48,14 @@ header img {
   width: 20em;
 }
 
-.speakers, .itinerary, .planner, .news, .about,
-.overlay, .instructions {
-  margin: 5% auto;
+.news, .about {
+  margin: 5% auto 0;
 }
 
 .banner h1 {
   font-size: 5em;
 }
+
 .banner h2 {
   font-size: 4em;
 }
@@ -65,51 +67,78 @@ header img {
 .topnav {
 
 }
+
 .nav-fixed {
   top: 0;
   z-index: 100;
   position: fixed;
   width: 100%;
-
 }
 
 ul.topnav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: $primary-color;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: $primary-color;
 }
-
 
 ul.topnav li {
   float: left;
   width: 20%;
-
 }
 
 ul.topnav li a {
-    display: inline-block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: 0.3s;
-    font-size: 17px;
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-family: $secondary-font;
 }
 
 
-ul.topnav li a:hover {background-color: #555;}
+ul.topnav li:hover {
+  background-color: $tertiary-color;
+}
 
+ul.topnav li a:hover {
+  text-decoration: underline;
+  text-style: italic;
+}
 
-ul.topnav li.icon {display: none;}
+ul.topnav li.icon {
+  display: none;
+}
 
 .about {
   width: 90%;
 }
 
-.speakers, .itinerary, .instructions, .overlay h2 {
+.speakers, .itinerary, .instructions, .overlay, #payment-form {
   font-size: 24px;
+  font-family: $primary-font;
+}
+
+.overlay h2 {
+  color: $secondary-color;
+  text-align: center;
+}
+
+h2 {
+  font-size: 22px;
+  letter-spacing: 2px;
+  font-family: $secondary-font;
+  color: $tertiary-color;
+  text-align: left;
+}
+
+h2:hover {
+  text-decoration: underline;
+  text-decoration-style: dotted;
 }
 
 h3 {
@@ -136,10 +165,12 @@ h4 {
   height: 80vh;
   background-color: $secondary-color;
 }
-
+.speakers, .itinerary {
+  margin: 0 auto;
+}
 .planner {
   position: relative;
-  background-color: $striped-background;
+  margin: 1em auto;
 }
 
 .instructions, .overlay {
@@ -149,7 +180,6 @@ h4 {
   bottom:0;
   background-color:$primary-color;
   z-index:10;
-  border: 0.1px $primary-color solid;
   color: $secondary-color;
   display: none;
 }
@@ -158,24 +188,21 @@ h4 {
   left: 4.5%;
   background-color:$tertiary-color;
   // opacity: 0.8;
-
-
 }
 
 .instructions  {
   right: 4.5%;
   background-color:$primary-color;
-  opacity: 0.8;
-
+  opacity: 0.9;
 }
 
 .overlay img {
   position: relative;
   display: block;
-  width: 8em;
-  height: 8em;
+  width: 7em;
+  height: 7em;
   text-align: center;
-  margin: 0 auto 2em;
+  margin: 0 auto 1em;
 }
 
 .overlay .info {
@@ -238,7 +265,7 @@ h4 {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   height: 2.4em;
-  border: 0.1px black solid;
+  border: 2px black solid;
   width: 10%;
   text-align: center;
 }
@@ -252,7 +279,6 @@ h4 {
   margin-left: 0em;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
-
 }
 
 .timeslot h2 {
@@ -281,35 +307,28 @@ h4 {
 
 .session-box:hover {
   border: 1px solid $primary-color;
-  color: white;
 }
 
 .session-box h2 {
   padding-top: 10%;
   text-align: center;
   margin: 0 auto;
+  font-family: $secondary-font;
 }
 
 .session-box p {
   position: absolute;
   top: 65%;
   font-size: 14px;
-
 }
 
-
 .session-box img {
-  opacity: 0.2;
+  opacity: 0.3;
   width:100%;
   position: absolute;
   left: 0;
   z-index: 10;
 }
-.session-box img:hover {
-  opacity: 0.9;
-
-}
-
 
 .session-box::-webkit-scrollbar {
     width: 1em;
@@ -318,8 +337,6 @@ h4 {
 .session-box::-webkit-scrollbar-track {
   background-color: $secondary-color;
   outline: 1px solid $secondary-color;
-
-
 }
 
 .session-box::-webkit-scrollbar-thumb {
@@ -335,10 +352,47 @@ h4 {
   background-color: #ec7976 !important;
 }
 
-.news, .location {
+.news, .location{
   width: 45%;
   text-align: left;
   display: inline-block;
+  padding-bottom: 2em;
+}
+
+.more-info {
+ display: inline-block;
+ width: 40%;
+ text-align: center;
+ vertical-align: top;
+ padding: 2em;
+ h2{
+   text-align: center;
+ }
+}
+.map-div {
+ display: inline-block;
+  width: 40%;
+  text-align: center;
+  vertical-align: top;
+  padding: 2em;
+  h2{
+    text-align: center;
+  }
+}
+
+.contact {
+  background-color: $striped-background;
+}
+
+.sponsors {
+  background-color: $primary-color;
+  height: 200px;
+  color: $secondary-color;
+  padding-top: 1em;
+}
+
+.sponsors img {
+  height: 8em;
 }
 
 #close-window, #close-payment-btn {
@@ -358,42 +412,6 @@ h4 {
   padding-top: 2%;
   cursor: pointer;
   color: red;
-}
-
-.more-info {
-  display: inline-block;
-  width: 40%;
-  text-align: center;
-  vertical-align: top;
-  padding: 2em;
-  h2{
-    font-size: 2em;
-  }
-}
-.map-div {
-  display: inline-block;
-  width: 40%;
-  text-align: center;
-  vertical-align: top;
-  padding: 2em;
-
-  h2{
-    font-size: 2em;
-  }
-}
-.contact {
-  background-color: $striped-background;
-}
-
-
-.sponsors {
-  background-color: $primary-color;
-  height: 200px;
-  color: $secondary-color;
-}
-.sponsors img{
-  height: 8em;
-
 }
 
 //
@@ -473,9 +491,7 @@ input.submit.btn:hover {
   background-color: rgba(0,0,0,0.9);
   padding: 5% 11%;
   overflow: scroll;
-
 }
-
 
 #payment-form h4 {
   font-family: $secondary-font;
@@ -483,13 +499,11 @@ input.submit.btn:hover {
   color: $secondary-color;
 }
 
-
 #payment-form h5 {
   font-size: 16px;
   color: $tertiary-color;
   display: inline-block;
 }
-
 
 .about p {
   line-height: 1.5em;
@@ -499,12 +513,12 @@ input.submit.btn:hover {
   padding: 20px;
 }
 
-
 .verification {
   width: 100px;
   display: inline-block;
 }
-//materialize
+
+// -------------- Materialize ---------------
 
 /* label color */
 .input-field {
@@ -515,27 +529,32 @@ input.submit.btn:hover {
  color: $tertiary-color;
  font-family: $secondary-font;
 }
+
 /* label focus color */
 .input-field input[type=text]:focus + label {
  color: $tertiary-color;
  font-family: $secondary-font;
 
 }
+
 /* label underline focus color */
 .input-field input[type=text]:focus {
  border-bottom: 1px solid $secondary-color;
  box-shadow: 0 1px 0 0 $secondary-color;
 }
+
 /* valid color */
 .input-field input[type=text].valid {
  border-bottom: 1px solid $secondary-color;
  box-shadow: 0 1px 0 0 $secondary-color;
 }
+
 /* invalid color */
 .input-field input[type=text].invalid {
  border-bottom: 1px solid $secondary-color;
  box-shadow: 0 1px 0 0 $secondary-color;
 }
+
 /* icon prefix focus color */
 .input-field .prefix.active {
  color: $secondary-color;

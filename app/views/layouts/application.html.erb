@@ -4,75 +4,18 @@
     <title>WdiConf</title>
     <%= csrf_meta_tags %>
     <%= render 'layouts/links' %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
 
-    <header class="banner">
-
-      <img src="/assets/wdiconf2.png" alt="">
-
-
-    </header>
-
-    <nav>
-
-      <script>
-        function myFunction() {
-          var x = document.getElementById("myTopnav");
-          if (x.className === "topnav") {
-              x.className += " responsive";
-          } else {
-              x.className = "topnav";
-          }
-      }
-      </script>
-
-      <ul class="topnav" id="myTopnav">
-        <li data-location="#about"><a>about</a></li>
-        <li data-location="#planner"><a>speakers</a></li>
-        <li data-location="#news"><a>news</a></li>
-        <li data-location="#location"><a>location</a></li>
-        <li data-location="#partners"><a>partners</a></li>
-        <li class="icon">
-          <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
-        </li>
-      </ul>
-
-
-    </nav>
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/navbar' %>
 
     <%= yield %>
 
-    <div id="contact" class="contact">
-      <div id='info' class="more-info">
-        <h2>More info:</h2>
-        <p>wdi2k16@gmail.com</p>
-        <p><span></span>: </p>
-
-
-      </div>
-      <div id='map-div' class="map-div">
-        <h2>Location</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.7042113800157!2d144.95684342969204!3d-37.818578289754846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b33fa08005%3A0x5b4ce751bc4d46f6!2sGeneral+Assembly+Melbourne!5e0!3m2!1sen!2sau!4v1481111706871" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </div>
-    </div>
-
-    <footer>
-
-      <div class="sponsors" id="sponsors">
-        <h3>Sponsored by:</h3>
-        <%= image_tag "GA.png" %>
-
-      <div class="copyright">
-
-
-      </div>
-
-    </footer>
-
+    <%= render 'layouts/footer' %>
     <%= render 'pages/scripts' %>
   </body>
 </html>

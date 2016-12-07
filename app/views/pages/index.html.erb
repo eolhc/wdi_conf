@@ -1,48 +1,44 @@
 
-    <div class="attendee-form">
+<div class="attendee-form"></div>
 
-
-    </div>
 <div class="about" id="about">
   <h2>about wdiCONF 2k16</h2>
   <br>
-    <p>
-      wdiCONF is a community-driven conference that traverses the frontier of our beautiful web.
-    </p>
-    <p>Each year, wdiCONF brings together a new array of rising influencers on the web for a day packed with great energy, with influencers
-      sharing their knowledge via multi-track lectures and interactive workshops. wdiCONF 2k16's line-up is set to explore
-      a mix of tech, design, products and more and leave you with exciting but practical takeaways.
-    </p>
-<br>
-<br>
-<h2 id="planner">curate your wdiCONF</h2>
+  <p>
+    wdiCONF is a community-driven conference that traverses the frontier of our beautiful web.
+  </p>
+  <p>Each year, wdiCONF brings together a new array of rising influencers on the web for a day packed with great energy, with influencers
+    sharing their knowledge via multi-track lectures and interactive workshops. wdiCONF 2k16's line-up is set to explore
+    a mix of tech, design, products and more and leave you with exciting but practical takeaways.
+  </p>
+  <br>
+  <br>
+  <h2 id="planner">curate your wdiCONF</h2>
 </div>
 
 <div class="planner">
+  <div class="speakers"></div>
+  <div class="itinerary"></div>
 
-  <div class="speakers">
+  <div class="overlay">
+    <i id="close-window" class="fa fa-window-close" aria-hidden="true"></i>
+    <div class="info">
+    </div>
   </div>
 
-    <div class="itinerary"></div>
-
-    <div class="overlay">
-      <i id="close-window" class="fa fa-window-close" aria-hidden="true"></i>
-      <div class="info">
-      </div>
-    </div>
-
-    <div class="instructions">
-      <span class="steps">
-        <h3>Select speakers to read about them.<br>
-          Drag and drop your favourite talks into the itinerary to curate your day.<br>
-          <br>
-          <button class="steps-btn" type="submit">
-            <i class="fa fa-check"></i>
-          </button>
-        </h3>
-      </span>
-    </div>
+  <div class="instructions">
+    <span class="steps">
+      <h3>Select speakers to read about them.<br>
+        Drag and drop your favourite talks into the itinerary to curate your day.<br>
+        <br>
+        <button class="steps-btn" type="submit">
+          <i class="fa fa-check"></i>
+        </button>
+      </h3>
+    </span>
+  </div>
 </div>
+
 <button class="submit-itinerary waves-light waves-effect">book tickets</button>
 
 
@@ -54,30 +50,40 @@
   <p><a href="https://www.youtube.com/watch?v=D-UmfqFjpl0">[06-09] We're back! Announcing: wdiCONF2k16!</a></li>
 </div>
 
-<div class="contact" id="location">
-  <span class="map">
+<div id="contact" class="contact">
+  <!-- Email , phone and whatever else -->
+  <div id='info' class="more-info">
+    <h2>More info:</h2>
+    <p>wdi2k16@gmail.com</p>
+    <p><span></span>: </p>
+  </div>
 
-  </span>
+  <!-- MAP -->
+  <div id='map-div' class="map-div">
+    <h2>Location</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.7042113800157!2d144.95684342969204!3d-37.818578289754846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b33fa08005%3A0x5b4ce751bc4d46f6!2sGeneral+Assembly+Melbourne!5e0!3m2!1sen!2sau!4v1481111706871" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
 </div>
 
 
 <script id="session-box" type="text/x-handlebars-template">
-  <span class="session-box draggable" time={{talktime}} venue={{venue}} data-id={{sessionid}}>
-    <img src="/images/{{speakerimg}}" alt="" data-id={{sessionid}}>
+  <span class="session-box draggable tooltipped" time={{talktime}} venue={{venue}} data-id={{sessionid}} >
+    <img src="/images/{{speakerimg}}" alt="" data-id={{sessionid}} >
     <h2 data-id={{sessionid}}>{{speakername}}</h2>
     <p data-id={{sessionid}}>{{talktitle}} @ {{talktime}}:00</p>
   </span>
 </script>
 
+<!-- Time Slot (Itinerary) -->
 <script id="timeslot" type="text/x-handlebars-template">
     <div class="itinerary-row">
       <span class="timeslot" time={{talktime}}>
         <p>{{text}}</p>
-
       </span>
     </div>
 </script>
 
+<!-- Speaker Info -->
 <script id="overlay" type="text/x-handlebars-template">
   <img src="/images/{{speakerimg}}" alt="">
   <h2>{{speakername}} </h2>
@@ -88,8 +94,8 @@
 
 </script>
 
+<!-- Payment Form -->
 <script id="attendee-form" type="text/x-handlebars-template">
-
   <%= form_tag charges_path, id: "payment-form", method: "post" do %>
 
     <h2>CHECKOUT</h2>
@@ -129,7 +135,7 @@
 
     <h4>PAYMENT INFORMATION</h4>
     <div class="form-row input-field">
-      <input id="card" size="20" data-stripe="number">
+      <input id="card" type="text" size="20" data-stripe="number">
       <label for="card">card number</label>
     </div>
 
@@ -137,6 +143,7 @@
         <input id="expiry-mth" type="text" size="2" data-stripe="exp_month">
         <label for="expiry-mth">mm</label>
     </div>
+
     <div class="form-row input-field verification">
       <input id="expiry-yr" type="text" size="2" data-stripe="exp_year">
       <label for="expiry-yr">yy</label>
@@ -146,12 +153,13 @@
       <input class="validate" id="cvc" type="text" size="4" data-stripe="cvc">
       <label for="cvc">cvc</label>
     </div>
+
     <br>
     <span class="payment-errors"></span>
     <br>
+
     <input id="sessionsAdded" type="hidden" name="name" value="">
     <input type="submit" class="submit btn" value="submit payment">
   <% end %>
-
 
 </script>
