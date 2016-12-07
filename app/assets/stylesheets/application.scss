@@ -47,9 +47,8 @@ header img {
   width: 20em;
 }
 
-.speakers, .itinerary, .news, .about,
-.overlay, .instructions {
-  margin: 5% auto;
+.news, .about {
+  margin: 5% auto 0;
 }
 
 .banner h1 {
@@ -96,7 +95,8 @@ ul.topnav li a {
     padding: 14px 16px;
     text-decoration: none;
     transition: 0.3s;
-    font-size: 17px;
+    font-size: 14px;
+    letter-spacing: 1px;
     font-family: $secondary-font;
 }
 
@@ -126,14 +126,12 @@ h2 {
   letter-spacing: 2px;
   font-family: $secondary-font;
   color: $tertiary-color;
-}
-
-.about h2 {
   text-align: left;
 }
 
 .overlay h2 {
   color: $secondary-color;
+  text-align: center;
 }
 
 h2:hover {
@@ -166,9 +164,12 @@ p {
   height: 80vh;
   background-color: $secondary-color;
 }
-
+.speakers, .itinerary {
+  margin: 0 auto;
+}
 .planner {
   position: relative;
+  margin: 1em auto;
 }
 
 .instructions, .overlay {
@@ -178,7 +179,6 @@ p {
   bottom:0;
   background-color:$primary-color;
   z-index:10;
-  border: 0.1px $primary-color solid;
   color: $secondary-color;
   display: none;
 }
@@ -194,15 +194,15 @@ p {
 .instructions  {
   right: 4.5%;
   background-color:$primary-color;
-  opacity: 0.8;
+  opacity: 0.9;
 
 }
 
 .overlay img {
   position: relative;
   display: block;
-  width: 8em;
-  height: 8em;
+  width: 7em;
+  height: 7em;
   text-align: center;
   margin: 0 auto 1em;
 }
@@ -359,7 +359,7 @@ p {
   background-color: #ec7976 !important;
 }
 
-.news, .location {
+.news, .location{
   width: 45%;
   text-align: left;
   display: inline-block;
