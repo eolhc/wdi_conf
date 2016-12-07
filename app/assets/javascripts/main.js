@@ -223,5 +223,8 @@ $(document).ready(function() {
     $('.overlay').animate({width:'toggle'},1000)
   })
 
+  //Remove Info card from map to make it more visible
+  $(".place-card").remove()
+
 
 })

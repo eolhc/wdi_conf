@@ -279,6 +279,7 @@ p {
 
 .session-box:hover {
   border: 1px solid $primary-color;
+  color: white;
 }
 
 .session-box h2 {
@@ -291,15 +292,20 @@ p {
   position: absolute;
   top: 65%;
   font-size: 14px;
+
 }
 
 
 .session-box img {
-  opacity: 0.3;
+  opacity: 0.2;
   width:100%;
   position: absolute;
   left: 0;
   z-index: 10;
+}
+.session-box img:hover {
+  opacity: 0.9;
+
 }
 
 
@@ -346,6 +352,24 @@ p {
   padding-top: 2%;
   cursor: pointer;
   color: red;
+}
+
+.contact .map-div{
+  display: inline-block;
+  width: 40%;
+  text-align: center;
+}
+
+
+
+.sponsors {
+  background-color: $primary-color;
+  height: 200px;
+  color: $secondary-color;
+}
+.sponsors img{
+  height: 8em;
+
 }
 
 //
