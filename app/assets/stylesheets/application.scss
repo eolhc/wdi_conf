@@ -20,6 +20,7 @@ $font-stack: Inconsolata, Monaco, Consolas, 'Courier New', Courier;
 $primary-color: #0069af;
 $secondary-color: white;
 $tertiary-color: #EB5E00;
+$striped-background: #fafafa;
 
 
 body {
@@ -138,6 +139,7 @@ p {
 
 .planner {
   position: relative;
+  background-color: $striped-background;
 }
 
 .instructions, .overlay {
@@ -354,12 +356,30 @@ p {
   color: red;
 }
 
-.more-info .map-div{
+.more-info {
   display: inline-block;
   width: 40%;
   text-align: center;
+  vertical-align: top;
+  padding: 2em;
+  h2{
+    font-size: 2em;
+  }
 }
+.map-div {
+  display: inline-block;
+  width: 40%;
+  text-align: center;
+  vertical-align: top;
+  padding: 2em;
 
+  h2{
+    font-size: 2em;
+  }
+}
+.contact {
+  background-color: $striped-background;
+}
 
 
 .sponsors {
