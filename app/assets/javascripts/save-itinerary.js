@@ -5,6 +5,14 @@ $(document).ready(function() {
     var source = $("#attendee-form").html();
     var template = Handlebars.compile(source);
     $('.attendee-form').append(template())
+    $('#payment-form').append("<i class='fa fa-window-close' id='close-payment-btn'>");
+                        // button to close speaker info
+
+    $('#close-payment-btn').on("click",function(e) {
+      console.log('hi')
+      $('.attendee-form').empty();
+    })
+
     //Add Event listener on the form submission
     $(function() {
 
