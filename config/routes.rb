@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   post "/charges", to: "charges#create"
   get "/attendee", to: "attendee#create_attendee"
-
-
+  get "/booking", to: "booking#create_booking"
+  get "/success", to: "pages#success"
 
 end

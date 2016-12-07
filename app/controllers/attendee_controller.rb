@@ -16,21 +16,15 @@ class AttendeeController < ApplicationController
     attendee.email = params[:email]
     attendee.phone = params[:phone]
     if attendee.save
-      attendee_id = attendee.id
-      create_booking(attendee_id)
-      redirect_to '/'
+      redirect_to :controller => 'booking',
+                  :action => 'create_booking',
+                  :method => 'post',
+                  :attendee_id => attendee.id,
+                  :sessions => params[:sessions]
     else
       render :new
     end
   end
 
-  def create_booking(attendee_id)
-    selected_sessions = params["sessions"].split(',')
-    selected_sessions.each do |session|
-      new_booking = Booking.new
-      new_booking.attendee_id = attendee_id
-      new_booking.session_id = session
-      new_booking.save
-    end
-  end
+
 end

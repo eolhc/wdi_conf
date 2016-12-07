@@ -41,9 +41,6 @@ class ChargesController < ApplicationController
                   :phone => params[:phone],
                   :sessions => params[:sessions]
 
-
-
-
     end
   end
 
