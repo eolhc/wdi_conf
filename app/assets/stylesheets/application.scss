@@ -19,6 +19,7 @@
 $font-stack: Inconsolata, Monaco, Consolas, 'Courier New', Courier;
 $primary-color: #0069af;
 $secondary-color: white;
+$tertiary-color: #EB5E00;
 
 
 body {
@@ -29,7 +30,6 @@ body {
 	height: 100%;
   background-color: $secondary-color;
 	// background-image: url(38436.svg);
-  position: relative;
   // background-size: 25px;
   // background-position: 0px 0px;
 	// background-repeat: repeat-x repeat-y;
@@ -140,17 +140,31 @@ p {
   position: relative;
 }
 
-.overlay, .instructions {
+.instructions, .overlay {
   text-align: center;
   position:absolute;
   top:0;
-  right: 4.5%;
   bottom:0;
   background-color:$primary-color;
   z-index:10;
   border: 0.1px $primary-color solid;
   color: $secondary-color;
   display: none;
+}
+
+.overlay {
+  left: 4.5%;
+  background-color:$tertiary-color;
+  // opacity: 0.8;
+
+
+}
+
+.instructions  {
+  right: 4.5%;
+  background-color:$primary-color;
+  opacity: 0.8;
+
 }
 
 .overlay img {
@@ -383,13 +397,13 @@ label, input {
   margin: 0 auto;
 }
 
-// #payment-form {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100vh;
-//   z-index: 800;
-//   background-color: rgba(0,0,0,0.5);
-//
-// }
+#payment-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 800;
+  background-color: rgba(0,0,0,0.8);
+
+}
