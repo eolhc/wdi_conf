@@ -30,13 +30,7 @@ class ChargesController < ApplicationController
       # The card has been declined
     end
     if charge.status == 'succeeded'
-      # redirect_to({
-      #   controller: 'attendee',
-      #   action: 'create_attendee' ,
-      #   'params[:first_name]' => params[:first_name],
-      #   'params[:second_name]' => params[:second_name],
-      #   'params[:email]' => params[:email],
-      #   'params[:phone]' => params[:phone] })
+
 
       redirect_to :controller => 'attendee',
                   :action => 'create_attendee',

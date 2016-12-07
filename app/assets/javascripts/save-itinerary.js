@@ -5,17 +5,6 @@ $(document).ready(function() {
     var source = $("#attendee-form").html();
     var template = Handlebars.compile(source);
     $('.attendee-form').append(template())
-    // .append($("<button>",{
-    //     id: 'checkout-btn',
-    //     text: "Checkout"
-    //   })
-    // );
-    //
-    // $('#checkout-btn').click(function() {
-    //   console.log('booking button clicked')
-    //   getSessions();
-    // });
-
     //Add Event listener on the form submission
     $(function() {
 
@@ -54,37 +43,17 @@ $(document).ready(function() {
         $form.append($('<input type="hidden" name="stripeToken">').val(token));
 
         //pedro - testing get sessions from itinerary
-        $form.append($('<input type="hidden" name="sessions">').val( getSessions2() ));
+        $form.append($('<input type="hidden" name="sessions">').val( getSessions() ));
 
         // Submit the form:
         $form.get(0).submit()
-
-        // getSessions(token)
-        console.log(token)
 
       }
     };
 
   })
 
-// --------------------pedro created to test -----------------
-function getSessions2() {
-
-  var timeslots = $('.timeslot')
-  var selectedSessions = []
-
-  for (var i = 0; i < timeslots.length; i++) {
-    if (timeslots[i].children[2]) {
-      selectedSessions.push($('.timeslot')[i].children[2].getAttribute('data-id'));
-    }
-  }
-  return selectedSessions
-}
-
-//------------------------------------------------------------
-
-
-  function getSessions(token) {
+  function getSessions() {
 
     var timeslots = $('.timeslot')
     var selectedSessions = []
@@ -94,41 +63,7 @@ function getSessions2() {
         selectedSessions.push($('.timeslot')[i].children[2].getAttribute('data-id'));
       }
     }
-
-    newAttendee(selectedSessions, token)
-    console.log(selectedSessions)
-  }
-
-  function newAttendee(selectedSessions, token) {
-    attendeeData = {
-      first_name: $('.first_name').val(),
-      last_name: $('.last_name').val(),
-      email: $('.email').val(),
-      phone: $('.phone').val()
-    }
-    $.ajax({
-      url: '/api/attendee/new',
-      method: 'post',
-      data: attendeeData
-    }).done(function(response){
-      data = {
-        token: token,
-        attendee: response,
-        attendeeSessions: selectedSessions
-      }
-      console.log(data)
-      submitBooking(data)
-    })
-  }
-
-  function submitBooking(data) {
-    $.ajax({
-      url: '/api/submitbooking',
-      method: 'post',
-      data: data
-    }).done(function(response) {
-      console.log("booking was submitted WITH ATTENDEE ID:"+response)
-    })
+    return selectedSessions
   }
 
 })
