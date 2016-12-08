@@ -143,6 +143,7 @@ h2:hover {
 
 h3 {
   font-size: 20px;
+  font-family: $secondary-font;
 }
 
 h4 {
@@ -165,9 +166,11 @@ h4 {
   height: 80vh;
   background-color: $secondary-color;
 }
-.speakers, .itinerary {
+
+.speakers, .itinerary, #confirmation {
   margin: 0 auto;
 }
+
 .planner {
   position: relative;
   margin: 1em auto;
@@ -191,7 +194,7 @@ h4 {
 }
 
 .instructions  {
-  right: 4.5%;
+  right: 4.6%;
   background-color:$primary-color;
   opacity: 0.9;
 }
@@ -264,8 +267,8 @@ h4 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  height: 2.4em;
-  border: 2px black solid;
+  height: 2.61em;
+  border: 0.1em black solid;
   width: 10%;
   text-align: center;
 }
@@ -300,7 +303,7 @@ h4 {
   height: 7em;
   position: relative;
   text-align: center;
-  margin: 1%;
+  margin-bottom: 0.1em;
   vertical-align: text-top;
   box-sizing:border-box;
 }
@@ -464,7 +467,7 @@ footer {
 }
 
 .submit-itinerary {
-  width: 90%;
+  width: 91%;
   background-color: $primary-color;
   padding: 1em;
   font-size: 14px;
@@ -531,6 +534,7 @@ input.submit.btn:hover {
   width: 100px;
   display: inline-block;
 }
+
 
 // -------------- Materialize ---------------
 

@@ -1,19 +1,25 @@
 <h4 id="session_id"><%= params["sessions"]  %></h4>
 <h4 id="attendee_id"><%= params["attendee_id"]%></h4>
-<div class="attendee"></div>
 
-<div class="itinerary">
+<div id="confirmation">
+  <div class="attendee"></div>
 
-</div>
+  <div id="itinerary">
+    <h3>Your Itinerary:</h3>
+    <div class="itinerary">
 
-<div class="thanks">
-  <h3>thanks and see u soon </h3>
+    </div>
+  </div>
+
+  <div class="thanks">
+    <h3>We look forward to seeing you</h3>
+  </div>
 </div>
 
 <script id="attendee" type="text/x-handlebars-template">
-  <h3>HELLO {{name}}</h3>
-  <h3>{{email}}</h3>
-  <h3>YOUR BOOKING IS CONFIRMED.</h3>
+  <h3>Hello {{name}}!</h3><br>
+  <p>Your booking has been confirmed:</p>
+  <p>$450.00 / 1 x wdiCONF 2k16 Ticket / Qty: 1</p>
 </script>
 
 <script id="selected-session" type="text/x-handlebars-template">
