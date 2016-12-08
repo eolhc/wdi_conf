@@ -108,10 +108,10 @@ $(document).ready(function() {
   var twentyEms = Number(getComputedStyle(document.body, "").fontSize.match(/(\d*(\.\d*)?)px/)[1]) * 20;
   $(window).scroll(function () {
    if ($(window).scrollTop() > twentyEms) {
-     $('nav').addClass('nav-fixed');
+     $('#navigation-bar').addClass('nav-fixed');
    }
    if ($(window).scrollTop() < twentyEms) {
-     $('nav').removeClass('nav-fixed');
+     $('#navigation-bar').removeClass('nav-fixed');
    }
   });
 
@@ -123,5 +123,7 @@ $(document).ready(function() {
 
   //tooltipped to drag session box
   $('.tooltipped').tooltip({delay: 50});
+
+
 
 });
