@@ -22,7 +22,6 @@ class BookingController < ApplicationController
       :attendee_id => params["attendee_id"],
       :sessions => params[:sessions]
     else
-      raise issue
       redirect_to '/'
     end
   end
