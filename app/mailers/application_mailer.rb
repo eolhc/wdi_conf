@@ -1,4 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
+  # default from: 'from@example.com'
   default from: 'wdiconf2k16@gmail.com'
   layout 'mailer'
   def sample_email(attendee)
