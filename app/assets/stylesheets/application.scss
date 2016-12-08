@@ -48,7 +48,7 @@ header img {
   width: 20em;
 }
 
-.news, .about {
+.about, .contact {
   margin: 5% auto 0;
 }
 
@@ -114,7 +114,7 @@ ul.topnav li.icon {
   display: none;
 }
 
-.about {
+.about, .contact {
   width: 90%;
 }
 
@@ -143,6 +143,7 @@ h2:hover {
 
 h3 {
   font-size: 20px;
+  font-family: $secondary-font;
 }
 
 h4 {
@@ -165,9 +166,11 @@ h4 {
   height: 80vh;
   background-color: $secondary-color;
 }
-.speakers, .itinerary {
+
+.speakers, .itinerary, #confirmation {
   margin: 0 auto;
 }
+
 .planner {
   position: relative;
   margin: 1em auto;
@@ -191,7 +194,7 @@ h4 {
 }
 
 .instructions  {
-  right: 4.5%;
+  right: 4.6%;
   background-color:$primary-color;
   opacity: 0.9;
 }
@@ -264,8 +267,8 @@ h4 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  height: 2.4em;
-  border: 2px black solid;
+  height: 2.61em;
+  border: 0.1em black solid;
   width: 10%;
   text-align: center;
 }
@@ -300,7 +303,7 @@ h4 {
   height: 7em;
   position: relative;
   text-align: center;
-  margin: 1%;
+  margin-bottom: 0.1em;
   vertical-align: text-top;
   box-sizing:border-box;
 }
@@ -352,17 +355,19 @@ h4 {
   background-color: #ec7976 !important;
 }
 
-.news, .location {
+.contact-right {
   width: 45%;
+  float: right;
   text-align: left;
-  display: inline-block;
   padding-bottom: 2em;
+  display: inline-block;
 }
 
-.more-info {
- display: inline-block;
- width: 40%;
- text-align: center;
+.contact-left {
+ float: left;
+ display: block;
+ width: 45%;
+ text-align: left;
  vertical-align: top;
  padding: 2em;
  h2{
@@ -474,7 +479,7 @@ footer {
 }
 
 .submit-itinerary {
-  width: 90%;
+  width: 91%;
   background-color: $primary-color;
   padding: 1em;
   font-size: 14px;
@@ -535,12 +540,14 @@ input.submit.btn:hover {
 
 .attendee-form {
   padding: 20px;
+  display: none;
 }
 
 .verification {
   width: 100px;
   display: inline-block;
 }
+
 
 // -------------- Materialize ---------------
 
