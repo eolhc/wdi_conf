@@ -3,9 +3,18 @@ class Api::BookingController < ApplicationController
   def display_itinerary
 
     selected_sessions = params["sessions"].split(',')
-    selected_sessions.each do |session|
+
+    all_sessions = [];
+
+    selected_sessions.each do |session,index|
+
+      session[:index]
+
+      all_sessions =
       session_details = Session.find(session.to_i)
-      response[]
+
+      response[:session_details] = session_details
+
       # session_details.speaker_name = params["speaker_name"]
       # session_details.venue = params["venue"]
       # session_details.talk_title = params["talk_title"]
@@ -14,7 +23,16 @@ class Api::BookingController < ApplicationController
     end
 
 
-    render json: sessions
-  end
+    render json: response
+end
+
+all_sessions = {
+  1 {
+    "name" => response[] "title,"speaker],}
+  2:
+  3:
+}
+
+
 
 end
