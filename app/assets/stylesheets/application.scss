@@ -384,16 +384,30 @@ h4 {
   background-color: $striped-background;
 }
 
-.sponsors {
+footer {
   background-color: $primary-color;
-  height: 200px;
-  color: $secondary-color;
-  padding-top: 1em;
-}
 
-.sponsors img {
-  height: 8em;
-}
+  .sponsors {
+    height: 200px;
+    color: $secondary-color;
+    padding-top: 1em;
+  }
+
+  .sponsors img {
+    height: 8em;
+  }
+
+  .producers {
+    color: $secondary-color;
+
+  }
+
+  .copyright {
+    color: $secondary-color;
+  }
+
+};
+
 
 #close-window, #close-payment-btn {
   position: absolute;
@@ -534,7 +548,6 @@ input.submit.btn:hover {
 .input-field input[type=text]:focus + label {
  color: $tertiary-color;
  font-family: $secondary-font;
-
 }
 
 /* label underline focus color */
