@@ -306,10 +306,15 @@ h4 {
   margin-bottom: 0.1em;
   vertical-align: text-top;
   box-sizing:border-box;
+  margin: 0.2em;
+  box-shadow: 5px 5px 5px #888888;
 }
 
 .session-box:hover {
   border: 1px solid $primary-color;
+  color: $tertiary-color;
+  font-weight: bolder;
+  cursor: pointer;
 }
 
 .session-box h2 {
@@ -327,10 +332,16 @@ h4 {
 
 .session-box img {
   opacity: 0.3;
-  width:100%;
+  width: 100%;
   position: absolute;
   left: 0;
   z-index: 10;
+  transition: opacity 1s;
+}
+
+.session-box img:hover {
+  opacity: 1;
+  z-index: 0;
 }
 
 .session-box::-webkit-scrollbar {
