@@ -39,13 +39,16 @@ body {
 	// animation: animatedBackground 80s linear infinite;
 }
 
+.banner {
+  background-image: url("/assets/wdiconf-large.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+
 header {
   height: 20em;
   width: 100%;
-}
-
-header img {
-  width: 20em;
 }
 
 .about {
@@ -490,6 +493,9 @@ footer {
   ul.topnav.responsive li a {
     display: block;
     text-align: left;
+  }
+  .banner {
+    background-image: url("/assets/wdiconf2.png");
   }
 }
 
