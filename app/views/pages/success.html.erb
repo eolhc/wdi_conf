@@ -1,28 +1,81 @@
-<h1> hello </h1>
+<h1> hello
+  <span id="attendee-name"></span>
+</h1>
 
 <div class="itinerary">
-  <%= @sessions  %>
-  <%= @attendee_id%>
+  <h4 id="session_id"><%= params["sessions"]  %></h4>
+  <h4 id="attendee_id"><%= params["attendee_id"]%></h4>
+
 
 
 </div>
+<!--
+<script id="attendee" type="text/x-handlebars-template">
+  <h2>{{name}}</h2>
+  <p>{{email}}</p>
+</script> -->
+
+<script id="selected-session" type="text/x-handlebars-template">
+  <span class="selected-session" time={{talktime}}>
+    <h2>{{speakername}}</h2>
+    <p>{{talktitle}} @ {{talktime}}:00</p>
+  </span>
+</script>
 
 <script>
 
 $(document).ready(function() {
     console.log("helooooo o ol l")
     //display the itinerary of a successful booking
+    session_id = $('#session_id').text().split(',')
+    // attendee_id = $('#attendee_id').text().split(',')
+
+
+    data = {
+      sessionID: session_id
+      // attendeeID: attendee_id
+    }
+
     $.ajax({
       url: "/api/displayitinerary",
-      method: "get"
+      method: "get",
+      data: data
     })
     .done(function(response) {
       console.log(response)
-    })
+      var sessions = response
+      var source = $('#selected-session').html();
+      var template = Handlebars.compile(source);
+      for (var i = 0; i < sessions.length; i++) {
+        speaker = {
+          speakername: sessions[i].speaker_name,
+          talktitle: sessions[i].talk_title,
+          talktime: sessions[i].talk_time
+          // venue: sessions[i].venue.split(' ').join('-')
+      }
+      $('.itinerary').append(template(speaker))
+    }
+
+    // $.ajax({
+    //   url: "/api/attendeedetails",
+    //   method:"get",
+    //   data: data
+    // }).done(function(response) {
+    //   console.log(response)
+    //   var sessions = response
+    //   var source = $('#attendee').html();
+    //   var template = Handlebars.compile(source);
+    //   attendeeData = {
+    //     name:
+    //   }
+    // })
+
+
 
   //for each of the sessions in my params["sessions"],
   //i want the session speaker name, talk name, talk talk_title
   //and display them all as an itinerary
+  })
 })
 
 </script>
