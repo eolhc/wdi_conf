@@ -183,7 +183,7 @@ h4 {
   width: 45%;
   vertical-align: top;
   text-align: center;
-  height: 80vh;
+  height: 22em;
   background-color: $secondary-color;
 }
 
@@ -327,6 +327,7 @@ h4 {
   box-sizing:border-box;
   margin: 0.2em;
   box-shadow: 5px 5px 5px #888888;
+  border-radius: 10px;
 }
 
 .session-box:hover {
@@ -355,6 +356,7 @@ h4 {
   left: 0;
   z-index: 10;
   transition: opacity 1s;
+  border-radius: 10px;
 }
 
 .session-box img:hover {
