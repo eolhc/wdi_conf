@@ -85,94 +85,12 @@ var displaySpeakers = function(response) {
 
 $(document).ready(function() {
 
-
   $(document).on("keydown",function(e) {
   if (e.which == 27) {
     console.log('escape was hit!')
     $('.overlay').animate({width:'toggle'},1000);
     }
   })
-
-
-
-
-  // Make 'timeslot' Draggable and set properties
-  $(".timeslot").droppable({
-    hoverClass: hoverTimeslot,
-    out: function(){
-      $(this).css("background-color","")
-    },
-    tolerance: "pointer",
-
-    drop: placeSession
-    // scope: function() {
-    //   this.attr('time')
-    // }
-  })
-
-  function hoverTimeslot( event, ui ) {
-    var slotTime = $(this).attr('time')
-    var cardTime = $('.ui-draggable-helper').attr('time')
-    if ( slotTime == cardTime ) {
-      return 'correct'
-    }else {
-      return 'wrong'
-    }
-  }
-
-
-  function placeSession( event, ui ) {
-    var slotTime = $(this).attr('time')
-    var cardTime = ui.draggable.attr('time')
-
-    // If the card was dropped to the correct slot,
-    // change the card colour, position it directly
-    // on top of the slot, and prevent it being dragged
-    // again
-
-    if ( slotTime == cardTime ) {
-      //ui.draggable.addClass( 'correct' );
-      //ui.draggable.draggable( 'disable' );
-      //$(this).droppable( 'disable' );
-      //ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
-      //ui.draggable.draggable( 'option', 'revert', false );
-
-
-      //take text within the session box that was selected for dragging
-      //ui.draggable.html()
-      //put text within the timeslot that it was dragged into
-      $(this).html(
-        '<i id="remove-speaker" class="fa fa-minus-square remove-speaker" aria-hidden="true"></i>'
-        +ui.draggable.html()
-        + '<p>'
-        +'Location: '
-        + ui.draggable.attr('venue').split('-').join(' ')
-        + '</p>'
-      )
-      .css({
-        "text-align": "left",
-      });
-
-      $(this).find("p").css({
-        "margin-left": "7em",
-        "margin-top": "0em",
-        "margin-bottom": "0em"
-      })
-
-      //button to remove speaker from the timeslot
-      $('.remove-speaker').on("click",function(e) {
-        console.log('removed');
-        this.parentElement.style.textAlign = 'center';
-        $(this.parentElement).html('<p>'+ this.parentElement.attributes.time.value +':00</p>')
-
-      })
-
-      // return false;
-    }else {
-      // return true;
-    }
-  }
-
 
 
   //scrolling menu
