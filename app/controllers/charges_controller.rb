@@ -12,7 +12,7 @@ class ChargesController < ApplicationController
     # Create a charge: this will charge the user's card
     begin
       charge = Stripe::Charge.create(
-        :amount => 500, # Amount in cents ($5.00)
+        :amount => 45000, # Amount in cents ($450.00)
         :currency => "aud",
         :source => token,
         :description => "WDI Conf 2k16 - Ticket"
