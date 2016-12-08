@@ -262,8 +262,8 @@ $(document).ready(function() {
       //ui.draggable.html()
       //put text within the timeslot that it was dragged into
       $(this).html(
-        '<i id="remove-speaker" class="fa fa-minus-square remove-speaker" aria-hidden="true"></i>'
-        +ui.draggable.html()
+//        '<i id="remove-speaker" class="fa fa-user-times remove-speaker" aria-hidden="true"></i>'
+        ui.draggable.html()
         + '<p>'
         +'Location: '
         + ui.draggable.attr('venue').split('-').join(' ')
@@ -273,19 +273,29 @@ $(document).ready(function() {
         "text-align": "left",
       });
 
+      $(this).hover(function(){
+          var icon = $('<i id="remove-speaker" class="fa fa-user-times remove-speaker" aria-hidden="true">');
+          var $sessionbox = $(this);
+          $(this).prepend(icon);
+
+          //listener -> button to remove speaker from the timeslot
+          $('.remove-speaker').on("click",function(e) {
+            console.log('removed');
+            this.parentElement.style.textAlign = 'center';
+            $(this.parentElement).html('<p>'+ this.parentElement.attributes.time.value +':00</p>')
+            $sessionbox.off()
+          })
+
+        }, function(){
+          $('i').remove();
+      });
+
       $(this).find("p").css({
         "margin-left": "7em",
         "margin-top": "0em",
         "margin-bottom": "0em"
       })
 
-      //button to remove speaker from the timeslot
-      $('.remove-speaker').on("click",function(e) {
-        console.log('removed');
-        this.parentElement.style.textAlign = 'center';
-        $(this.parentElement).html('<p>'+ this.parentElement.attributes.time.value +':00</p>')
-
-      })
 
       // return false;
     }else {
