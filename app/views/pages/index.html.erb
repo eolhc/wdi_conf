@@ -29,12 +29,12 @@
   <div class="instructions">
     <span class="steps">
       <h3>Select speakers to read about them.<br>
-        Drag and drop your favourite talks into the itinerary to curate your day.<br>
-        <br>
-        <button class="steps-btn" type="submit">
-          <i class="fa fa-check"></i>
-        </button>
-      </h3>
+        Drag and drop your favourite talks into the itinerary to curate your day.</h3>
+      <br>
+      <br>
+      <button class="steps-btn" type="submit">
+        <i class="fa fa-check"></i>
+      </button>
     </span>
   </div>
 </div>
@@ -161,5 +161,110 @@
     <input id="sessionsAdded" type="hidden" name="name" value="">
     <input type="submit" class="submit btn" value="submit payment">
   <% end %>
+
+</script>
+
+<script>
+$(document).ready(function() {
+
+  //display all the speakers
+  $.ajax({
+    url: "/api/displayspeakers",
+    method: "get"
+  })
+  .done(displaySpeakers)
+
+  //display slots for the itinerary
+  var times = [9, 10, 11, 12, 13, 14, 15, 16]
+  var innertext = ["9:00","10:00","11:00","L U N C H","13:00","14:00","15:00","16:00"]
+  var source = $("#timeslot").html();
+  var template = Handlebars.compile(source);
+  for (var i = 0; i < times.length; i++) {
+    timeslot = {
+      talktime: times[i],
+      text: innertext[i]
+    }
+    $(".itinerary").append(template(timeslot))
+  }
+
+  // Make 'timeslot' Draggable and set properties
+  $(".timeslot").droppable({
+    hoverClass: hoverTimeslot,
+    out: function(){
+      $(this).css("background-color","")
+    },
+    tolerance: "pointer",
+
+    drop: placeSession
+    // scope: function() {
+    //   this.attr('time')
+    // }
+  })
+
+  function hoverTimeslot( event, ui ) {
+    var slotTime = $(this).attr('time')
+    var cardTime = $('.ui-draggable-helper').attr('time')
+    if ( slotTime == cardTime ) {
+      return 'correct'
+    }else {
+      return 'wrong'
+    }
+  }
+
+
+  function placeSession( event, ui ) {
+    var slotTime = $(this).attr('time')
+    var cardTime = ui.draggable.attr('time')
+
+    // If the card was dropped to the correct slot,
+    // change the card colour, position it directly
+    // on top of the slot, and prevent it being dragged
+    // again
+
+    if ( slotTime == cardTime ) {
+      //ui.draggable.addClass( 'correct' );
+      //ui.draggable.draggable( 'disable' );
+      //$(this).droppable( 'disable' );
+      //ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+      //ui.draggable.draggable( 'option', 'revert', false );
+
+
+      //take text within the session box that was selected for dragging
+      //ui.draggable.html()
+      //put text within the timeslot that it was dragged into
+      $(this).html(
+        '<i id="remove-speaker" class="fa fa-minus-square remove-speaker" aria-hidden="true"></i>'
+        +ui.draggable.html()
+        + '<p>'
+        +'Location: '
+        + ui.draggable.attr('venue').split('-').join(' ')
+        + '</p>'
+      )
+      .css({
+        "text-align": "left",
+      });
+
+      $(this).find("p").css({
+        "margin-left": "7em",
+        "margin-top": "0em",
+        "margin-bottom": "0em"
+      })
+
+      //button to remove speaker from the timeslot
+      $('.remove-speaker').on("click",function(e) {
+        console.log('removed');
+        this.parentElement.style.textAlign = 'center';
+        $(this.parentElement).html('<p>'+ this.parentElement.attributes.time.value +':00</p>')
+
+      })
+
+      // return false;
+    }else {
+      // return true;
+    }
+  }
+
+})
+
 
 </script>
