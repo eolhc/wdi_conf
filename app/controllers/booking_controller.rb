@@ -2,6 +2,7 @@ class BookingController < ApplicationController
 #want this for posting a booking to database
 
   def create_booking
+
     saved_sessions = []
     not_saved_sessions = []
     selected_sessions = params["sessions"].split(',')
