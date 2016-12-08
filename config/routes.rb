@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get "/booking", to: "booking#create_booking"
   get "/success", to: "pages#success"
 
+  get "/api/displayitinerary", to: "api/booking#get_itinerary"
+
 end
