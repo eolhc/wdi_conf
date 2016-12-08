@@ -1,0 +1,2 @@
+class ItineraryMailer < ApplicationMailer
+end
