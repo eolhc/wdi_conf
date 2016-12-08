@@ -572,3 +572,7 @@ input.submit.btn:hover {
 .input-field .prefix.active {
  color: $secondary-color;
 }
+
+#session_id, #attendee_id {
+  display: none;
+}

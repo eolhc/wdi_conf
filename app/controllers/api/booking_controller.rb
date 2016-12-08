@@ -15,7 +15,7 @@ class Api::BookingController < ApplicationController
       timeslot["speaker_name"] = session_details.speaker_name
       timeslot["talk_title"] = session_details.talk_title
       timeslot["talk_time"] = session_details.talk_time
-      # timeslot["venue"] = session_details.venue
+      timeslot["venue"] = session_details.venue
 
       all_sessions << timeslot
     end
