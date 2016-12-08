@@ -74,7 +74,7 @@ talk_desc = [
   "Catherine explores the impending death of native apps and where HTML5 fails where native apps still succeeds.",
   "Charith talks about Aurelia, the next-generation open-source JavaScript client framework and how it can be paired with Redux.",
   "Google Analytics expert Dean talks about stalking your favourite users' behaviours.",
-  "Duyen carries us through the basic mechanics of creating a chatbot. If you're lonely, please attend.",
+  "Duyen carries us through the basic mechanics of creating a chatbot because sometimes talking to a chatbot is better than talking to a real human.",
   "Today, EJ propounds the perks of pair programming.",
   "James gets deep with Deepstream,  an Open-Source Server for Building Realtime Apps",
   "Jason talks about JS Fatigue, what we can learn and how to get well again.",
