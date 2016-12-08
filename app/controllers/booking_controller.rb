@@ -18,6 +18,9 @@ class BookingController < ApplicationController
         end
     end
     if selected_sessions == saved_sessions
+
+
+
       redirect_to :controller => 'pages',
       :action => 'success',
       :attendee_id => params["attendee_id"],
