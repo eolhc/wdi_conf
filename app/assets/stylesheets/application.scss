@@ -50,7 +50,11 @@ header img {
 
 .about, .contact {
   margin: 5% auto 0;
+  background-color: $striped-background;
+  width: 90%;
+  padding: 2em;
 }
+
 
 .banner h1 {
   font-size: 5em;
@@ -112,10 +116,6 @@ ul.topnav li a:hover {
 
 ul.topnav li.icon {
   display: none;
-}
-
-.about, .contact {
-  width: 90%;
 }
 
 .speakers, .itinerary, .instructions, .overlay, #payment-form {
@@ -303,7 +303,7 @@ h4 {
   height: 7em;
   position: relative;
   text-align: center;
-  margin-bottom: 0.1em;
+  margin: 0.1em;
   vertical-align: text-top;
   box-sizing:border-box;
 }
@@ -359,7 +359,6 @@ h4 {
   width: 45%;
   float: right;
   text-align: left;
-  padding-bottom: 2em;
   display: inline-block;
 }
 
@@ -369,7 +368,7 @@ h4 {
  width: 45%;
  text-align: left;
  vertical-align: top;
- padding: 2em;
+ padding-right: 2em;
  h2{
    text-align: left;
  }
@@ -379,14 +378,7 @@ h4 {
   width: 40%;
   text-align: left;
   vertical-align: top;
-  padding: 2em;
-  h2{
-    text-align: center;
-  }
-}
 
-.contact {
-  background-color: $striped-background;
 }
 
 footer {

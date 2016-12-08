@@ -101,7 +101,7 @@ $(document).ready(function() {
 
   function scrollTo(element){
     $('html, body').animate({
-      scrollTop: $(element).offset().top
+      scrollTop: $(element).offset().top-60
     },  1000);
   }
   // Fix nav bar menu on top when scroll
