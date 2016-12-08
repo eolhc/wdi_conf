@@ -80,7 +80,7 @@ talk_desc = [
   "Jason talks about JS Fatigue, what we can learn and how to get well again.",
   "Mr Chan encourages us to get online with Thredded, the best possible Rails 4.2+ forum in existence.",
   "Nextcloud, is it the best cloud? Is it the next cloud? Or is it really the last cloud... Leon lets us know.",
-  "Melissa advises with her expert opinion on the importance of getting tested and keep your base clean and free of bugs.",
+  "Melissa advises with her expert opinion on the importance of getting tested and keeping your base clean and free of bugs.",
   "Ever wondered how to create a port scanner? Micah knows and Micah will tell. Thanks Micah.",
   "Nick shows us the range of hamburger menus and new hamburger menus that can be hammed out.",
   "Persist with Paul Morello and PHP. Please.",

@@ -55,11 +55,11 @@ header {
   margin: 5% auto 0;
 }
 
-.contact {
+.contact, #confirmation {
   margin: 5% auto;
 }
 
-.about, .contact {
+.about, .contact, #confirmation {
   background-color: $striped-background;
   width: 90%;
   padding: 2em;
@@ -187,7 +187,7 @@ h4 {
   background-color: $secondary-color;
 }
 
-.speakers, .itinerary, #confirmation {
+.speakers, .itinerary {
   margin: 0 auto;
 }
 
@@ -330,7 +330,6 @@ h4 {
 }
 
 .session-box:hover {
-  border: 1px solid $primary-color;
   color: $tertiary-color;
   font-weight: bolder;
   cursor: pointer;
@@ -419,6 +418,7 @@ footer {
     color: $secondary-color;
     padding-top: 1em;
     display: inline-block;
+    text-align: left;
   }
 
   .sponsors img {
@@ -573,6 +573,33 @@ input.submit.btn:hover {
   display: inline-block;
 }
 
+#session_id, #attendee_id {
+  display: none;
+}
+
+.selected-session {
+  vertical-align: text-top;
+  text-align: center;
+  padding-bottom: 2em;
+  img {
+    height: 2.7em;
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  h2 {
+    display: inline-block;
+    vertical-align: text-top;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+.attendee-itinerary {
+  padding: 2em 2em 0em 2em;
+}
+
 
 // -------------- Materialize ---------------
 
@@ -613,8 +640,4 @@ input.submit.btn:hover {
 /* icon prefix focus color */
 .input-field .prefix.active {
  color: $secondary-color;
-}
-
-#session_id, #attendee_id {
-  display: none;
 }

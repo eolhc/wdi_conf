@@ -3,37 +3,38 @@
 
 <div id="confirmation">
   <div class="attendee"></div>
+  <br>
 
-  <div id="itinerary">
+  <div id="attendee-itinerary">
     <h3>Your Itinerary:</h3>
-    <div class="itinerary">
+    <div class="attendee-itinerary">
 
     </div>
   </div>
 
   <div class="thanks">
-    <h3>We look forward to seeing you</h3>
+    <h3>We look forward to seeing you!</h3>
   </div>
 </div>
 
 <script id="attendee" type="text/x-handlebars-template">
   <h3>Hello {{name}}!</h3><br>
-  <p>Your booking has been confirmed:</p>
-  <p>$450.00 / 1 x wdiCONF 2k16 Ticket / Qty: 1</p>
+  <p>Thank you for booking</p>
+  <p>1 x wdiCONF 2k16 Ticket / $450.00 / Qty: 1</p>
 </script>
 
 <script id="selected-session" type="text/x-handlebars-template">
-  <span class="selected-session" time={{talktime}}>
-    <h2>{{speakername}}</h2>
-    <p>{{talktitle}} @ {{talktime}}:00</p>
-    <p>{{venue}}</p>
-  </span>
+  <div class="selected-session" time={{talktime}}>
+    <img src="/images/{{speakerimg}}" alt="">
+    <h2>{{speakername}}</h2><br><br>
+    <p>{{talktitle}}</p>
+    <p>@ {{talktime}}:00 in {{venue}}</p>
+  </div>
 </script>
 
 <script>
 
 $(document).ready(function() {
-    console.log("helooooo o ol l")
     //display the itinerary of a successful booking
     session_id = $('#session_id').text().split(',')
     attendee_id = $('#attendee_id').text().split(',')
@@ -59,9 +60,10 @@ $(document).ready(function() {
           speakername: sessions[i].speaker_name,
           talktitle: sessions[i].talk_title,
           talktime: sessions[i].talk_time,
-          venue: sessions[i].venue.split(' ').join(' ')
+          venue: sessions[i].venue.split(' ').join(' '),
+          speakerimg: sessions[i].speaker_img
         }
-        $('.itinerary').append(template(speaker))
+        $('.attendee-itinerary').append(template(speaker))
       }
     })
 
