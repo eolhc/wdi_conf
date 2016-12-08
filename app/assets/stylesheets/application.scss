@@ -40,7 +40,7 @@ body {
 }
 
 .banner {
-  background-image: url("wdiconf-large.png");
+  background-image: asset-path("wdiconf-large.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 80%;
@@ -520,7 +520,7 @@ footer {
     text-align: left;
   }
   .banner {
-    background-image: url("wdiconf2.png");
+    background-image: asset-path("wdiconf2.png");
   }
 }
 
