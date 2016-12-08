@@ -287,9 +287,10 @@ h4 {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   height: 2.7em;
-  border: 0.1em black solid;
+  border: 0.1em #ffffff solid;
   width: 10%;
   text-align: center;
+  background-color: #cccccc;
 }
 
 .timeslot>h2 {
@@ -312,8 +313,14 @@ h4 {
   position: relative;
   float: left;
   display: inline-block;
-  width: 2.4em;
-  height: 2.4em;
+  width: 2.7em;
+  height: 2.7em;
+}
+
+.timeslot i {
+
+  font-size: 1em;
+  padding-right: 1em;
 }
 
 .session-box {
@@ -327,7 +334,6 @@ h4 {
   box-sizing:border-box;
   margin: 0.2em;
   box-shadow: 5px 5px 5px #888888;
-  border-radius: 10px;
 }
 
 .session-box:hover {
@@ -356,7 +362,6 @@ h4 {
   left: 0;
   z-index: 10;
   transition: opacity 1s;
-  border-radius: 10px;
 }
 
 .session-box img:hover {
