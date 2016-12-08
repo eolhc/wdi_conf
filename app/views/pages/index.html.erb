@@ -16,7 +16,7 @@
     <li data-location="#planner"><a>speakers</a></li>
     <li data-location="#contact-left"><a>news</a></li>
     <li data-location="#contact-left"><a>location</a></li>
-    <li data-location="#contact-left"><a>partners</a></li>
+    <li data-location="#contact-left"><a>sponsors</a></li>
     <li class="icon">
       <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
     </li>
@@ -99,7 +99,7 @@
   <span class="session-box draggable tooltipped" time={{talktime}} venue={{venue}} data-id={{sessionid}} >
     <img src="/images/{{speakerimg}}" alt="" data-id={{sessionid}} >
     <h2 data-id={{sessionid}}>{{speakername}}</h2>
-    <p data-id={{sessionid}}>{{talktitle}} @ {{talktime}}:00</p>
+    <p data-id={{sessionid}}>{{talktitle}} @ <strong>{{talktime}}:00</strong></p>
   </span>
 </script>
 
