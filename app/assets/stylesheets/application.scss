@@ -13,19 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
  @import "font-awesome-sprockets";
  @import "font-awesome";
 
-
+// Main colors
 $primary-color: #0069af;
 $secondary-color: white;
 $tertiary-color: #EB5E00;
 $primary-font: 'Inconsolata', Monaco, Consolas, 'Courier New', Courier;
 $striped-background: #fafafa;
 $secondary-font: 'Poppins', sans-serif;
-
-
-
 
 body {
   text-align: center;
@@ -57,6 +55,7 @@ header img {
 .banner h1 {
   font-size: 5em;
 }
+
 .banner h2 {
   font-size: 4em;
 }
@@ -68,39 +67,37 @@ header img {
 .topnav {
 
 }
+
 .nav-fixed {
   top: 0;
   z-index: 100;
   position: fixed;
   width: 100%;
-
 }
 
 ul.topnav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: $primary-color;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: $primary-color;
 }
-
 
 ul.topnav li {
   float: left;
   width: 20%;
-
 }
 
 ul.topnav li a {
-    display: inline-block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: 0.3s;
-    font-size: 14px;
-    letter-spacing: 1px;
-    font-family: $secondary-font;
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-family: $secondary-font;
 }
 
 
@@ -113,7 +110,9 @@ ul.topnav li a:hover {
   text-style: italic;
 }
 
-ul.topnav li.icon {display: none;}
+ul.topnav li.icon {
+  display: none;
+}
 
 .about {
   width: 90%;
@@ -124,6 +123,11 @@ ul.topnav li.icon {display: none;}
   font-family: $primary-font;
 }
 
+.overlay h2 {
+  color: $secondary-color;
+  text-align: center;
+}
+
 h2 {
   font-size: 22px;
   letter-spacing: 2px;
@@ -132,15 +136,9 @@ h2 {
   text-align: left;
 }
 
-.overlay h2 {
-  color: $secondary-color;
-  text-align: center;
-}
-
 h2:hover {
   text-decoration: underline;
   text-decoration-style: dotted;
-
 }
 
 h3 {
@@ -190,15 +188,12 @@ h4 {
   left: 4.5%;
   background-color:$tertiary-color;
   // opacity: 0.8;
-
-
 }
 
 .instructions  {
   right: 4.5%;
   background-color:$primary-color;
   opacity: 0.9;
-
 }
 
 .overlay img {
@@ -270,7 +265,7 @@ h4 {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   height: 2.4em;
-  border: 0.1px black solid;
+  border: 2px black solid;
   width: 10%;
   text-align: center;
 }
@@ -284,7 +279,6 @@ h4 {
   margin-left: 0em;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
-
 }
 
 .timeslot h2 {
@@ -319,7 +313,7 @@ h4 {
   padding-top: 10%;
   text-align: center;
   margin: 0 auto;
-  font-family: $secondary-font
+  font-family: $secondary-font;
 }
 
 .session-box p {
@@ -327,7 +321,6 @@ h4 {
   top: 65%;
   font-size: 14px;
 }
-
 
 .session-box img {
   opacity: 0.3;
@@ -337,7 +330,6 @@ h4 {
   z-index: 10;
 }
 
-
 .session-box::-webkit-scrollbar {
     width: 1em;
 }
@@ -345,8 +337,6 @@ h4 {
 .session-box::-webkit-scrollbar-track {
   background-color: $secondary-color;
   outline: 1px solid $secondary-color;
-
-
 }
 
 .session-box::-webkit-scrollbar-thumb {
@@ -366,6 +356,7 @@ h4 {
   width: 45%;
   text-align: left;
   display: inline-block;
+  padding-bottom: 2em;
 }
 
 .more-info {
@@ -375,7 +366,7 @@ h4 {
  vertical-align: top;
  padding: 2em;
  h2{
-   font-size: 2em;
+   text-align: center;
  }
 }
 .map-div {
@@ -384,24 +375,24 @@ h4 {
   text-align: center;
   vertical-align: top;
   padding: 2em;
-
   h2{
-    font-size: 2em;
+    text-align: center;
   }
 }
+
 .contact {
   background-color: $striped-background;
 }
-
 
 .sponsors {
   background-color: $primary-color;
   height: 200px;
   color: $secondary-color;
+  padding-top: 1em;
 }
-.sponsors img{
-  height: 8em;
 
+.sponsors img {
+  height: 8em;
 }
 
 #close-window, #close-payment-btn {
@@ -500,7 +491,6 @@ input.submit.btn:hover {
   background-color: rgba(0,0,0,0.9);
   padding: 5% 11%;
   overflow: scroll;
-
 }
 
 #payment-form h4 {
@@ -509,13 +499,11 @@ input.submit.btn:hover {
   color: $secondary-color;
 }
 
-
 #payment-form h5 {
   font-size: 16px;
   color: $tertiary-color;
   display: inline-block;
 }
-
 
 .about p {
   line-height: 1.5em;
@@ -525,12 +513,12 @@ input.submit.btn:hover {
   padding: 20px;
 }
 
-
 .verification {
   width: 100px;
   display: inline-block;
 }
-//materialize
+
+// -------------- Materialize ---------------
 
 /* label color */
 .input-field {
@@ -541,27 +529,32 @@ input.submit.btn:hover {
  color: $tertiary-color;
  font-family: $secondary-font;
 }
+
 /* label focus color */
 .input-field input[type=text]:focus + label {
  color: $tertiary-color;
  font-family: $secondary-font;
 
 }
+
 /* label underline focus color */
 .input-field input[type=text]:focus {
  border-bottom: 1px solid $secondary-color;
  box-shadow: 0 1px 0 0 $secondary-color;
 }
+
 /* valid color */
 .input-field input[type=text].valid {
  border-bottom: 1px solid $secondary-color;
  box-shadow: 0 1px 0 0 $secondary-color;
 }
+
 /* invalid color */
 .input-field input[type=text].invalid {
  border-bottom: 1px solid $secondary-color;
  box-shadow: 0 1px 0 0 $secondary-color;
 }
+
 /* icon prefix focus color */
 .input-field .prefix.active {
  color: $secondary-color;

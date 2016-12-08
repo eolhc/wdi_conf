@@ -1,0 +1,24 @@
+<nav>
+  <!-- Does it have to be here???  -->
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+          x.className += " responsive";
+      } else {
+          x.className = "topnav";
+      }
+    }
+  </script>
+
+  <ul class="topnav" id="myTopnav">
+    <li data-location="#about"><a>about</a></li>
+    <li data-location="#planner"><a>speakers</a></li>
+    <li data-location="#news"><a>news</a></li>
+    <li data-location="#location"><a>location</a></li>
+    <li data-location="#partners"><a>partners</a></li>
+    <li class="icon">
+      <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+    </li>
+  </ul>
+</nav>

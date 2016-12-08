@@ -5,7 +5,6 @@ class AttendeeController < ApplicationController
   end
 
   def new
-
     render :new
   end
 
