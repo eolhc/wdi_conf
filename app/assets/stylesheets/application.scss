@@ -412,13 +412,14 @@ h4 {
 
 footer {
   background-color: $primary-color;
+  padding: 0 2em;
 
   .sponsors {
     height: 200px;
     color: $secondary-color;
-    padding-top: 1em;
     display: inline-block;
     text-align: left;
+    margin-top: 2em;
   }
 
   .sponsors img {
@@ -441,6 +442,7 @@ footer {
 
   .copyright {
     color: $secondary-color;
+    padding-bottom: 2em;
   }
 
 };
