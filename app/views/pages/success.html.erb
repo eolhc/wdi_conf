@@ -6,3 +6,23 @@
 
 
 </div>
+
+<script>
+
+$(document).ready(function() {
+    console.log("helooooo o ol l")
+    //display the itinerary of a successful booking
+    $.ajax({
+      url: "/api/displayitinerary",
+      method: "get"
+    })
+    .done(function(response) {
+      console.log(response)
+    })
+
+  //for each of the sessions in my params["sessions"],
+  //i want the session speaker name, talk name, talk talk_title
+  //and display them all as an itinerary
+})
+
+</script>

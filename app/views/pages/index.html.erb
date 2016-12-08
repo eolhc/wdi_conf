@@ -163,3 +163,17 @@
   <% end %>
 
 </script>
+
+<script>
+$(document).ready(function() {
+
+  //display all the speakers
+  $.ajax({
+    url: "/api/displayspeakers",
+    method: "get"
+  })
+  .done(displaySpeakers)
+
+})
+
+</script>
