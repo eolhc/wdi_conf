@@ -85,6 +85,10 @@ var displaySpeakers = function(response) {
 
 $(document).ready(function() {
 
+  $('header').click(function() {
+    document.location.href="/"
+  });
+
   $(document).on("keydown",function(e) {
   if (e.which == 27) {
     console.log('escape was hit!')

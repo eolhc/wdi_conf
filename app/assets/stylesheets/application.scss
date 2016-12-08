@@ -407,6 +407,9 @@ h4 {
  h2{
    text-align: left;
  }
+ a {
+   color: $primary-color;
+ }
 }
 .map-div {
  display: inline-block;
@@ -418,38 +421,50 @@ h4 {
 
 footer {
   background-color: $primary-color;
-  padding: 0 2em;
+  padding: 2em 4em;
+  text-align: left;
 
-  .sponsors {
-    height: 200px;
-    color: $secondary-color;
+  #footer-wrapper {
+    width: 90%;
+    box-sizing: border-box;
+    margin: 0 auto;
     display: inline-block;
-    text-align: left;
-    margin-top: 2em;
-  }
 
-  .sponsors img {
-    height: 8em;
-  }
-
-  .producers {
-    display: inline-block;
-    color: $secondary-color;
-    text-align: left;
-    margin-left: 5em;
-    a {
-      color: $tertiary-color;
-      display: block;
+    .sponsors {
+      display: inline-block;
+      color: $secondary-color;
+      width: 85%;
+      float: left;
     }
-    i {
-      font-size: 2em;
+
+    .sponsors img {
+      height: 6em;
     }
+
+    .producers {
+      display: inline-block;
+      color: $secondary-color;
+      width: 15%;
+      vertical-align: text-top;
+      float: right;
+
+      a {
+        color: $tertiary-color;
+        display: inline-block;
+      }
+      i {
+        font-size: 1em;
+      }
+    }
+
+    p {
+      color: $secondary-color;
+      text-align: center;
+      vertical-align: text-bottom;
+    }
+
   }
 
-  .copyright {
-    color: $secondary-color;
-    padding-bottom: 2em;
-  }
 
 };
 
@@ -486,6 +501,8 @@ footer {
     display: inline-block;
   }
 }
+
+
 
 @media screen and (max-width:680px) {
   ul.topnav.responsive {position: relative;}
@@ -571,6 +588,10 @@ input.submit.btn:hover {
   line-height: 1.5em;
 }
 
+.attendee h2, .thanks h2, #attendee-itinerary h2 {
+    text-align: center;
+  }
+
 .attendee-form {
   padding: 20px;
   display: none;
@@ -586,26 +607,47 @@ input.submit.btn:hover {
 }
 
 .selected-session {
-  vertical-align: text-top;
-  text-align: center;
+  text-align: left;
   padding-bottom: 2em;
   img {
-    height: 2.7em;
+    height: 3.5em;
     text-align: center;
     margin: 0 auto;
     display: inline-block;
     vertical-align: middle;
+
   }
   h2 {
     display: inline-block;
-    vertical-align: text-top;
     font-size: 18px;
     font-weight: bold;
+  }
+  h3 {
+    font-size: 16px;
+
+  }
+  .location-details {
+    color: $tertiary-color;
+    text-align: left;
+    vertical-align: text-bottom;
+    display:inline-block;
+    float: left;
+    margin-right: 2em;
+
+  }
+  .event-details {
+    display: inline-block;
+    color: $primary-color;
+    vertical-align: middle;
+
+    h2 {
+      color: $primary-color;
+    }
   }
 }
 
 .attendee-itinerary {
-  padding: 2em 2em 0em 2em;
+  padding: 2em 5em 0em 5em;
 }
 
 

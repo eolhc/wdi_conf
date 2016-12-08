@@ -6,29 +6,34 @@
   <br>
 
   <div id="attendee-itinerary">
-    <h3>Your Itinerary:</h3>
+    <h2>Your Itinerary:</h2>
     <div class="attendee-itinerary">
 
     </div>
   </div>
 
   <div class="thanks">
-    <h3>We look forward to seeing you!</h3>
+    <h2>We look forward to seeing you!</h2>
   </div>
 </div>
 
 <script id="attendee" type="text/x-handlebars-template">
-  <h3>Hello {{name}}!</h3><br>
+  <h2>Hello {{name}}!</h2><br>
   <p>Thank you for booking</p>
   <p>1 x wdiCONF 2k16 Ticket / $450.00 / Qty: 1</p>
 </script>
 
 <script id="selected-session" type="text/x-handlebars-template">
   <div class="selected-session" time={{talktime}}>
+    <span class="location-details">
+      <h3>@ {{talktime}}:00</h3><p>in {{venue}}</p>
+    </span>
     <img src="/images/{{speakerimg}}" alt="">
-    <h2>{{speakername}}</h2><br><br>
-    <p>{{talktitle}}</p>
-    <p>@ {{talktime}}:00 in {{venue}}</p>
+    <div class="event-details">
+      <h2>{{speakername}}</h2><br>
+      <p>presents</p>
+      <h3>{{talktitle}}</h3>
+    </div>
   </div>
 </script>
 
