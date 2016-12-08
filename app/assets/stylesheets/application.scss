@@ -48,7 +48,7 @@ header img {
   width: 20em;
 }
 
-.news, .about {
+.about, .contact {
   margin: 5% auto 0;
 }
 
@@ -114,7 +114,7 @@ ul.topnav li.icon {
   display: none;
 }
 
-.about {
+.about, .contact {
   width: 90%;
 }
 
@@ -355,17 +355,19 @@ h4 {
   background-color: #ec7976 !important;
 }
 
-.news, .location {
+.contact-right {
   width: 45%;
+  float: right;
   text-align: left;
-  display: inline-block;
   padding-bottom: 2em;
+  display: inline-block;
 }
 
-.more-info {
- display: inline-block;
- width: 40%;
- text-align: center;
+.contact-left {
+ float: left;
+ display: block;
+ width: 45%;
+ text-align: left;
  vertical-align: top;
  padding: 2em;
  h2{
@@ -528,6 +530,7 @@ input.submit.btn:hover {
 
 .attendee-form {
   padding: 20px;
+  display: none;
 }
 
 .verification {

@@ -2,6 +2,7 @@
 $(document).ready(function() {
   // When user select sessions and click book tickets
   $('.submit-itinerary').click(function() {
+    $(".attendee-form").show();
     var source = $("#attendee-form").html();
     var template = Handlebars.compile(source);
 
