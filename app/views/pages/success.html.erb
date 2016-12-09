@@ -6,7 +6,7 @@
   <br>
 
   <div id="attendee-itinerary">
-
+    <h2>Your Itinerary:</h2>
   <div class="attendee-itinerary">
 
     </div>
@@ -62,6 +62,8 @@ $(document).ready(function() {
       var template = Handlebars.compile(source);
       if ( sessions.length > 0){
         for (var i = 0; i < sessions.length; i++) {
+          $('#attendee-itinerary').show();
+
           speaker = {
             speakername: sessions[i].speaker_name,
             talktitle: sessions[i].talk_title,
@@ -69,8 +71,7 @@ $(document).ready(function() {
             venue: sessions[i].venue.split(' ').join(' '),
             speakerimg: sessions[i].speaker_img
           }
-          $('.attendee-itinerary').append('<h2>Your Itinerary:</h2>')
-          
+
           $('.attendee-itinerary').append(template(speaker))
 
         }
