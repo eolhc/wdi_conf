@@ -16,7 +16,6 @@ class PagesController < ApplicationController
 
       # Sends email to user when user is created.
       ItineraryMailer.sample_email(attendee).deliver_now
-      raise
 
       #
       # format.html { redirect_to attendee, notice: 'Attendee was successfully created.' }

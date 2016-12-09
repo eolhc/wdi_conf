@@ -51,6 +51,8 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   # Setting the app to send out emails with Gmail from the production environment.
+    config.action_mailer.perform_deliveries = true
+
     config.action_mailer.delivery_method = :smtp
     # SMTP settings for gmail
     config.action_mailer.smtp_settings = {
