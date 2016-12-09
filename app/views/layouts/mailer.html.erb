@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html>
+<style>
+  body {
+    font-family: Sans-serif;
+    color: #0069af;
+  }
+</style>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to example.com,</h1>
+    <h3>Hello <%= @attendee.first_name %>,</h3>
     <p>
-      You have successfully signed up to example.com,
-      your username is:<br>
+      Your payment of $450.00 for wdiCONF2K16 has been successfully received.
+<!-- 
+      You are booked in for the following sessions:
+      <li><%= @talk_title %> by <%= @speaker_name %> @ <%= @time %> in <%= @venue %></li> -->
+
+      Thank you for your purchase and see you soon!
     </p>
     <p>
-      To login to the site, just follow this link:
+      Sincerely,
     </p>
-    <p>Thanks for joining and have a great day!</p>
+    <h4>Team Platypus @ wdiCONF2k16</h4>
   </body>
 </html>
