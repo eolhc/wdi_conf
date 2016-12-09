@@ -43,7 +43,7 @@ body {
   background-image: image-url("wdiconf-large.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 80%;
+  background-size: contain
 }
 
 header {
@@ -110,6 +110,7 @@ ul.topnav {
 ul.topnav li {
   float: left;
   width: 20%;
+  cursor: pointer;
 }
 
 ul.topnav li a {
@@ -130,7 +131,6 @@ ul.topnav li:hover {
 }
 
 ul.topnav li a:hover {
-  text-decoration: underline;
   text-style: italic;
 }
 
@@ -193,6 +193,24 @@ h4 {
 
 .speakers, .itinerary {
   margin: 0 auto;
+}
+
+.speakers {
+  overflow-y: scroll !important
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
 
 .planner {
@@ -267,10 +285,6 @@ h4 {
   top: 60%;
   margin: -25% 0;
   width: 100%;
-}
-
-.speakers {
-  overflow-y: scroll;
 }
 
 .itinerary {
