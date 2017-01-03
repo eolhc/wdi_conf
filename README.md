@@ -36,6 +36,7 @@ Future intentions are to implement touchscreen integration and to include the pe
 :pencil2: Action Mailer  <br />
 :pencil2: HTML <br />
 :pencil2: CSS  <br />
+:pencil2: [Our Entity Relationship Mapping](https://goo.gl/XXEi0z)
 
 ## Team Platypus
 * [Bruno](https://github.com/brunorampi)
